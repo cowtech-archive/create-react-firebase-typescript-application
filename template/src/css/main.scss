@@ -1,0 +1,27 @@
+$font-main: "Lato";
+$font-size: 12pt;
+$page-min-size: calc(100vh - 8rem); // Not using 100vh due to https://nicolas-hoizey.com/2015/02/viewport-height-is-taller-than-the-visible-part-of-the-document-in-some-mobile-browsers.html
+
+// Breakpoints
+$breakpoints: (
+  mw11xx: 1100px, // Desktop
+  mw8xx: 800px, // iPhone 6+ (L)
+  mw7xx: 700px, // iPad Pro (P12, P23), iPad Air (L23), iPad Mini (L23)
+                // iPhone >4 L
+  mw6xx: 600px, // iPad Air (L12), iPad Mini (L12)
+                // iPhone <5 L
+  mw45x: 450px, // iPad Pro (PL13), iPad Air (P23, L13), iPad Mini (P23, L13)
+                // iPhone 6+ (P)
+  mw38x: 380px, // iPad Air (PL13), iPad Mini (PL13)
+                // iPhone 6 (P)
+                // iPhone <6 P
+
+  mh8xx: 800px,  // Large screens
+  mh6xx: 600px  // iPhone <5 L, iPhone 6 L, iPhone 6+ L
+);
+
+// Common includes
+@import "fonts";
+@import "lazier/main";
+@import "lazier/modules/typography";
+@import "lazier/modules/icons-svg";

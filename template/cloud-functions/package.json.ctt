@@ -1,0 +1,16 @@
+{
+  "name": "f-{{name}}",
+  "version": "1.0.0",
+  "description": "f-{{name}}",
+  "private": true,
+  "main": "index.js",
+  "files": ["index.js"],
+  "author": "{{author}} <{{authorEmail}}>",
+  "license": "MIT",
+  "homepage": "https://money-cowtech-it.it",
+  "dependencies": {
+    "core-js": "~2.4",
+    "firebase-admin": "~5.0",
+    "firebase-functions": "~0.5"
+  }
+}

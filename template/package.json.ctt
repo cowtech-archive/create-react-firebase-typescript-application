@@ -1,0 +1,98 @@
+{
+  "name": "name",
+  "version": "1.0.0",
+  "description": "{{description}}",
+  "private": true,
+  "scripts": {
+    "build": "webpack --env=production --progress",
+    "dev": "webpack-dev-server --progress",
+    "deploy": "firebase deploy --only hosting",
+    "lint": "./node_modules/.bin/tslint --project tsconfig.json -t stylish --type-check",
+    "f:dev": "rollup -w -c google-cloud-functions/rollup.config.js",
+    "f:build": "rollup --environment production -c cloud-functions/rollup.config.js",
+    "f:deploy": "rollup --silent --environment production -c google-cloud-functions/rollup.config.js && firebase deploy --only functions",
+    "pref:setup": "mkdir -p /tmp/gcf-{{name}} && rm -rf /tmp/gcf-{{name}}/* cloud-functions/node_modules",
+    "f:setup": "cp cloud-functions/package.json /tmp/gcf-{{name}} && cd /tmp/gcf-{{name}} && yarn install",
+    "postf:setup": "cp -a /tmp/gcf-{{name}}/{yarn.lock,node_modules} cloud-functions/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/{{githubUser}}/{{name}}"
+  },
+  "keywords": [],
+  "author": "{{author}} <{{authorEmail}}>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/{{githubUser}}/{{name}}/issues"
+  },
+  "homepage": "{{url}}",
+  "dependencies": {
+    "core-js": "~2.4",
+    "firebase": "~4.1",
+    "firebase-admin": "~5.0",
+    "firebase-functions": "~0.5",
+    "lazier.sass": "~4.4",
+    "react": "~15.6",
+    "react-bem-helper": "~1.4",
+    "react-dom": "~15.6",
+    "react-redux": "~5.0",
+    "react-router-dom": "~4.1",
+    "redux": "~3.7",
+    "redux-thunk": "~2.2",
+    "whatwg-fetch": "~2.0"
+  },
+  "devDependencies": {
+    "@cowtech/tslint-config": "~5.4",
+    "@types/core-js": "~0.9",
+    "@types/node": "~8.0",
+    "@types/prop-types": "~15.5",
+    "@types/react": "~15.0",
+    "@types/react-dom": "~15.5",
+    "@types/react-redux": "~4.4",
+    "@types/react-router": "~4.0",
+    "@types/react-router-dom": "~4.0",
+    "awesome-typescript-loader": "~3.1",
+    "babili-webpack-plugin": "~0.1",
+    "cheerio": "^1.0.0-rc.1",
+    "css-loader": "~0.28",
+    "extract-text-webpack-plugin": "~2.1",
+    "file-loader": "~0.11",
+    "html-webpack-exclude-assets-plugin": "~0.0",
+    "html-webpack-plugin": "~2.28",
+    "postcss-cssnext": "~2.11",
+    "postcss-discard-comments": "~2.0",
+    "postcss-loader": "~2.0",
+    "postcss-remove-selectors": "~2.0",
+    "rollup": "~0.43",
+    "rollup-plugin-typescript2": "~0.4",
+    "rollup-watch": "~4.0",
+    "sass-loader": "~6.0",
+    "string-replace-loader": "~1.2",
+    "style-ext-html-webpack-plugin": "~3.4",
+    "style-loader": "~0.18",
+    "ts-node": "~3.1",
+    "tslint": "~5.4",
+    "tslint-react": "~3.0",
+    "typescript": "~2.4",
+    "webpack": "~3.0",
+    "webpack-bundle-analyzer": "~2.8",
+    "webpack-dev-server": "~2.5"
+  },
+  "engines": {
+    "node": ">= 8.0"
+  },
+  "site": {
+    "common": {
+      "title": "{{name}}",
+      "description": "{{description}}",
+      "keywords": "",
+      "author": "{{author}}",
+      "firebase": {
+        "apiKey": "",
+        "authDomain": "",
+        "databaseURL": "",
+        "projectId": ""
+      }
+    }
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "short_name": "{{namespace}}",
+  "name": "{{namespace}}",
+  "version": @version@,
+  "icons": [
+    {
+      "src":"/images/manifest.png",
+      "sizes": "600x600",
+      "type": "image/png"
+    }
+  ],
+  "start_url": "/",
+  "background_color": "#000",
+  "theme_color": "#000",
+  "display": "standalone"
+}

@@ -1,0 +1,35 @@
+{
+  "name": "@cowtech/create-react-firebase-typescript-application",
+  "version": "0.0.0",
+  "description": "CowTech Template: React and Firebase TypeScript application",
+  "main": "index.js",
+  "files": [
+    "index.js",
+    "template",
+    "README.md",
+    "CHANGELOG.md"
+  ],
+  "bin": "./index.js",
+  "scripts": {
+    "postpublish": "git push origin && git push origin -f --tags"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/cowtech/create-react-firebase-typescript-application"
+  },
+  "keywords": [
+    "cowtech",
+    "create"
+  ],
+  "author": "Shogun <shogun@cowtech.it>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/cowtech/create-react-firebase-typescript-application/issues"
+  },
+  "engines": {
+    "node": ">=8.0.0"
+  },
+  "dependencies": {
+    "@cowtech/create-base": "^0.0.2"
+  }
+}
