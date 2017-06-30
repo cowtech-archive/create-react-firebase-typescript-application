@@ -1,5 +1,5 @@
 {
-  "name": "name",
+  "name": "{{name}}",
   "version": "1.0.0",
   "description": "{{description}}",
   "private": true,
@@ -15,17 +15,8 @@
     "f:setup": "cp cloud-functions/package.json /tmp/gcf-{{name}} && cd /tmp/gcf-{{name}} && yarn install",
     "postf:setup": "cp -a /tmp/gcf-{{name}}/{yarn.lock,node_modules} cloud-functions/"
   },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/{{githubUser}}/{{name}}"
-  },
-  "keywords": [],
   "author": "{{author}} <{{authorEmail}}>",
   "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/{{githubUser}}/{{name}}/issues"
-  },
-  "homepage": "{{url}}",
   "dependencies": {
     "core-js": "~2.4",
     "firebase": "~4.1",

@@ -1,3 +1,7 @@
+### 2017-06-30 / 0.0.3
+
+* Bugfixes.
+
 ### 2017-06-29 / 0.0.2
 
 * Removed useless file.

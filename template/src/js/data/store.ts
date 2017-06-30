@@ -50,7 +50,7 @@ export function connectComponent<T = RouteState>(component: React.ComponentClass
   return reduxConnect<T, {}, T>(connector, null)(component);
 }
 
-export function reducer(state: State, {type, payload}: Action): State{
+export function reducer(state: State, {type/*, payload*/}: Action): State{
   let newState: State = state;
 
   switch(type){

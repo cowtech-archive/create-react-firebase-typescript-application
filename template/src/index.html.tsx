@@ -14,7 +14,6 @@ import {store} from "./js/data/store";
 declare const env: Environment;
 
 import IconsDefinitions from "./js/components/icons-definitions";
-import TopAnchor from "./js/components/top-anchor";
 
 const index: string = ReactDOMServer.renderToStaticMarkup(
   <html>

@@ -15,7 +15,6 @@ import {Provider} from "react-redux";
 
 import {store} from "./data/store";
 
-import TopAnchor from "./components/top-anchor";
 import IconsDefinitions from "./components/icons-definitions";
 
 // Routes
@@ -38,7 +37,6 @@ document.addEventListener("DOMContentLoaded", () => {
     <Provider store={store}>
       <Router>
         <div id="main" className="main">
-          <TopAnchor/>
           <IconsDefinitions/>
         </div>
       </Router>

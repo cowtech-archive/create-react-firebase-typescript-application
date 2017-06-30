@@ -1,4 +1,4 @@
-interface Dictionary<V = string>{
+export interface Dictionary<V = string>{
   [key: string]: V;
 }
 
