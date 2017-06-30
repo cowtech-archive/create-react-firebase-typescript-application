@@ -122,6 +122,7 @@ module.exports = function(env){
       historyApiFallback: true,
       compress: true,
       hot: true,
+      host: "home.cowtech.it",
       port: 4200
     }
   };
