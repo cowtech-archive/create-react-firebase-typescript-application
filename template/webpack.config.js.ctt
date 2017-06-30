@@ -77,8 +77,7 @@ module.exports = function(env){
       "process.env": {NODE_ENV: JSON.stringify(env)} // This is needed by React for production mode
     }),
     new HtmlWebpackPlugin({template: "src/index.html.tsx", minify: {collapseWhitespace: true}, excludeAssets: [/\.js$/]}),
-    new HtmlWebpackExcludeAssetsPlugin(),
-    new ExtractTextPlugin({filename: "css/style.css"})
+    new HtmlWebpackExcludeAssetsPlugin()
   ];
 
   if(env === "production")
