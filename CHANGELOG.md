@@ -1,3 +1,7 @@
+### 2017-07-01 / 0.1.0
+
+* Use @cowtech/webpack-config.
+
 ### 2017-06-30 / 0.0.8
 
 * Improved host.
