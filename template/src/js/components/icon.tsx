@@ -10,7 +10,7 @@ interface IconProps{
   className?: string;
 }
 
-export default class Icon extends React.Component<IconProps, {}>{
+export default class Icon extends React.Component<IconProps>{
   render(): JSX.Element{
     const icon: {tag: string} = ICONS[this.props.name];
 

@@ -11,7 +11,7 @@ interface IconDefinition{
 declare const ICONS: {[name: string]: IconDefinition};
 const bem: BEMClass = BEM("IconsDefinitions");
 
-export default class IconsDefinitions extends React.Component<{}, {}>{
+export default class IconsDefinitions extends React.Component{
   render(): JSX.Element{
     const defs: string = Object.values(ICONS).map((i: IconDefinition) => i.definition).join("");
 

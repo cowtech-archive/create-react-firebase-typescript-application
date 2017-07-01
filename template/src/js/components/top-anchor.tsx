@@ -6,7 +6,7 @@ import Icon from "./icon";
 
 const bem: BEMClass = BEM("TopAnchor");
 
-export default class TopAnchor extends React.Component<{}, {}>{
+export default class TopAnchor extends React.Component{
   static animationProgress(startTime: number, duration: number = 350): number{
     return Math.min((new Date().getTime() - startTime) / duration, 1);
   }
