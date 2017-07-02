@@ -1,5 +1,6 @@
 const onServer: boolean = typeof window === "undefined"; // tslint:disable-line strict-type-predicates
 
+import React from "react";
 import {createStore, applyMiddleware, compose} from "redux";
 import {connect as reduxConnect} from "react-redux";
 import {RouteComponentProps} from "react-router";
@@ -38,7 +39,10 @@ interface Dispatcher{
 
 export type AsyncAction = (dispatch: Dispatch, getState?: () => State) => void;
 
+export type RouteProps<T = {}> = Dispatcher & RouteComponentProps<T>;
 export type RouteState<T = {}> = State & RouteComponentProps<T> & Dispatcher;
+export type Connector<T = RouteState, R = {}> = (state: T, ownProps?: RouteProps<R>) => T;
+
 export type ConnectedState = State & {dispatch?: Dispatch};
 
 // A default no-op state connector
@@ -46,8 +50,8 @@ export function stateConnector<T = RouteState>(state: T): T{
   return state;
 }
 
-export function connectComponent<T = RouteState>(component: React.ComponentClass<T>, connector: (state: T) => T = stateConnector){
-  return reduxConnect<T, {}, T>(connector, null)(component);
+export function connectComponent<T = RouteState, R = {}>(component: React.ComponentClass<T>, connector: Connector<T, R> = stateConnector){
+  return reduxConnect<T, any, RouteProps<R>>(connector, null)(component);
 }
 
 export function reducer(state: State, {type/*, payload*/}: Action): State{
