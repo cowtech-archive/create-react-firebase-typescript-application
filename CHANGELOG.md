@@ -1,3 +1,8 @@
+### 2017-07-09 / 0.4.0
+
+* Use CommonsChunkPlugin in development to improve bundle-analyzer experience.
+* Updated linter dependencies.
+
 ### 2017-07-02 / 0.3.0
 
 * Improved connector.

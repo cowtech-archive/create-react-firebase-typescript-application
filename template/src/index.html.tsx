@@ -32,7 +32,8 @@ const index: string = ReactDOMServer.renderToStaticMarkup(
       <link rel="manifest" href="/manifest.json"/>
 
       {env.environment === "production" && <style dangerouslySetInnerHTML={{__html: require("./css/main.scss").toString()}}/>}
-      <script defer={true} type="text/javascript" src="https://www.gstatic.com/firebasejs/4.1.1/firebase-app.js"></script>
+      <script defer={true} type="text/javascript" src="https://www.gstatic.com/firebasejs/4.1.3/firebase-app.js"></script>
+      {env.environment === "development" && <script defer={true} type="text/javascript" src="webpack-bootstrap.js"></script>}
       <script defer={true} type="text/javascript" src="/js/app.js"></script>
     </head>
     <body>

@@ -30,6 +30,6 @@
     "node": ">=8.0.0"
   },
   "dependencies": {
-    "@cowtech/create-base": "^0.0.3"
+    "@cowtech/create-base": "^0.0.4"
   }
 }
