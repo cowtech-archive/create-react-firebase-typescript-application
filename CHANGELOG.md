@@ -1,3 +1,7 @@
+### 2017-07-15 / 0.4.1
+
+* Fixed tslint.json.
+
 ### 2017-07-09 / 0.4.0
 
 * Use CommonsChunkPlugin in development to improve bundle-analyzer experience.
