@@ -1,3 +1,8 @@
+### 2017-07-24 / 0.4.2
+
+* Added audit command.
+* Switched to @cowtech/package-utils.
+
 ### 2017-07-15 / 0.4.1
 
 * Fixed tslint.json.
