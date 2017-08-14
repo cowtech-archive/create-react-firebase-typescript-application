@@ -1,13 +1,13 @@
-const onServer: boolean = typeof window === "undefined"; // tslint:disable-line strict-type-predicates
+const onServer: boolean = typeof window === 'undefined'; // tslint:disable-line strict-type-predicates
 
-import React from "react";
-import {createStore, applyMiddleware, compose} from "redux";
-import {connect as reduxConnect} from "react-redux";
-import {RouteComponentProps} from "react-router";
-import thunk from "redux-thunk";
-import * as firebase from "firebase";
+import React from 'react';
+import {createStore, applyMiddleware, compose} from 'redux';
+import {connect as reduxConnect} from 'react-redux';
+import {RouteComponentProps} from 'react-router';
+import thunk from 'redux-thunk';
+import * as firebase from 'firebase';
 
-import Environment from "../models/environment";
+import Environment from '../models/environment';
 
 interface ExtendedWindow extends Window{
   __REDUX_DEVTOOLS_EXTENSION_COMPOSE__?: any;

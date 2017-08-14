@@ -1,3 +1,8 @@
+### 2017-08-14 / 0.5.0
+
+* Updated dependencies.
+* Added linting.
+
 ### 2017-08-14 / 0.4.3
 
 * Updated dependencies.

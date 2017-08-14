@@ -1,4 +1,4 @@
-import * as BEMHelper from "react-bem-helper";
+import * as BEMHelper from 'react-bem-helper';
 
 const Defaults = BEMHelper.withDefaults({outputIsString: true});
 

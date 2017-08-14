@@ -3,17 +3,17 @@
 require("./images/favicon.png");
 require("./manifest.json");
 
-import * as React from "react";
-import ReactDOMServer from "react-dom/server";
-import {Provider} from "react-redux";
-import {StaticRouter as Router} from "react-router";
+import * as React from 'react';
+import ReactDOMServer from 'react-dom/server';
+import {Provider} from 'react-redux';
+import {StaticRouter as Router} from 'react-router';
 
-import {Environment} from "./js/models/environment";
-import {store} from "./js/data/store";
+import {Environment} from './js/models/environment';
+import {store} from './js/data/store';
 
 declare const env: Environment;
 
-import IconsDefinitions from "./js/components/icons-definitions";
+import IconsDefinitions from './js/components/icons-definitions';
 
 const index: string = ReactDOMServer.renderToStaticMarkup(
   <html>
@@ -31,14 +31,14 @@ const index: string = ReactDOMServer.renderToStaticMarkup(
       <link rel="shortcut icon" href="images/favicon.png" sizes="196x196"/>
       <link rel="manifest" href="/manifest.json"/>
 
-      {env.environment === "production" && <style dangerouslySetInnerHTML={{__html: require("./css/main.scss").toString()}}/>}
+      {env.environment === "production" && <style dangerouslySetInnerHTML={{__html: require('./css/main.scs').toString()}}/>}
       <script defer={true} type="text/javascript" src="https://www.gstatic.com/firebasejs/4.1.3/firebase-app.js"></script>
       {env.environment === "development" && <script defer={true} type="text/javascript" src="webpack-bootstrap.js"></script>}
       <script defer={true} type="text/javascript" src="/js/app.js"></script>
     </head>
     <body>
       <Provider store={store}>
-        <Router location={"/"} context={{}}>
+        <Router location={'/'} context={{}}>
           <div id="root" className="root">
             <div id="main" className="main">
               <IconsDefinitions/>

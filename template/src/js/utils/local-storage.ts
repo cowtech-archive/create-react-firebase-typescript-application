@@ -2,7 +2,7 @@ export function loadFromLocalStorage<T>(key: string, def: T = null): T{
   try{
     const serialized: string = localStorage.getItem(key);
 
-    return serialized && serialized !== "undefined" ? JSON.parse(serialized) : def;
+    return serialized && serialized !== 'undefined' ? JSON.parse(serialized) : def;
   }catch(e){
     return def;
   }

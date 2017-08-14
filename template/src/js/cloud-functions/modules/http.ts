@@ -1,7 +1,7 @@
-import * as functions from "firebase-functions";
+import * as functions from 'firebase-functions';
 
-import {Dictionary} from "../../models/dictionary";
-import {S_TO_MS, US_TO_MS} from "../../models/constants";
+import {Dictionary} from '../../models/dictionary';
+import {S_TO_MS, US_TO_MS} from '../../models/constants';
 
 interface CustomErrorBase{
   code: number;
@@ -27,11 +27,11 @@ export function getDuration(time: [number, number]): string{
 }
 
 export function sendResponse(res: ExtendedResponse, code: number, content?: string | object): void{
-  res.set("X-Response-Time", `${getDuration(res.startTime)} ms`);
+  res.set('X-Response-Time', `${getDuration(res.startTime)} ms`);
 
   res.status(code);
 
-  if(content && typeof content === "object")
+  if(content && typeof content === 'object')
     res.json(content);
   else
     res.end(content);

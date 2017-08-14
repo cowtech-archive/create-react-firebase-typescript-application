@@ -21,7 +21,7 @@ const activate = async function(): Promise<Array<boolean> | void>{
 };
 
 const fetchWithCache = async function(request: Request): Promise<Response>{
-  if(!request.url.includes("{{domain}}")) // Don't try to cache external resources
+  if(!request.url.includes('{{domain}}')) // Don't try to cache external resources
     return fetch(request);
 
   // Search in the cache
@@ -46,10 +46,10 @@ const fetchWithCache = async function(request: Request): Promise<Response>{
   return cachedResponse;
 };
 
-self.addEventListener("activate", (event: ExtendableEvent) => {
+self.addEventListener('activate', (event: ExtendableEvent) => {
   event.waitUntil(activate());
 });
 
-self.addEventListener("fetch", (event: FetchEvent) => {
+self.addEventListener('fetch', (event: FetchEvent) => {
   event.respondWith(fetchWithCache(event.request)); // tslint:disable-line no-floating-promises
 });

@@ -1,10 +1,10 @@
-import * as React from "react";
+import * as React from 'react';
 
-import {BEM, BEMClass, BoundHandler} from "../utils/dom-utils";
+import {BEM, BEMClass, BoundHandler} from '../utils/dom-utils';
 
-import Icon from "./icon";
+import Icon from './icon';
 
-const bem: BEMClass = BEM("TopAnchor");
+const bem: BEMClass = BEM('TopAnchor');
 
 export default class TopAnchor extends React.Component{
   static animationProgress(startTime: number, duration: number = 350): number{
@@ -21,7 +21,7 @@ export default class TopAnchor extends React.Component{
 
   render(): JSX.Element{
     return (
-      <a ref={(el: HTMLAnchorElement) => this.element = el} className={bem(null, "hidden")} onClick={this.handleScrollToTop} href="#top" title="Top">
+      <a ref={(el: HTMLAnchorElement) => this.element = el} className={bem(null, 'hidden')} onClick={this.handleScrollToTop} href="#top" title="Top">
         <Icon name="chevron-up"/>
       </a>
     );
@@ -29,11 +29,11 @@ export default class TopAnchor extends React.Component{
 
   componentDidMount(): void{
     this.scrollHandler = this.handleScroll.bind(this);
-    window.addEventListener("scroll", this.handleScroll.bind(this), false);
+    window.addEventListener('scroll', this.handleScroll.bind(this), false);
   }
 
   componentWillUnmount(): void{
-    window.removeEventListener("scroll", this.scrollHandler);
+    window.removeEventListener('scroll', this.scrollHandler);
   }
 
   shouldComponentUpdate(): boolean{
@@ -44,7 +44,7 @@ export default class TopAnchor extends React.Component{
     if(!this.element)
       return;
 
-    this.element.classList.toggle(bem(null, "hidden"), window.pageYOffset === 0);
+    this.element.classList.toggle(bem(null, 'hidden'), window.pageYOffset === 0);
   }
 
   handleScrollToTop(): void{

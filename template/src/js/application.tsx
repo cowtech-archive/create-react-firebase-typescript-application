@@ -1,28 +1,28 @@
-import "./utils/polyfills";
-import {Environment} from "./models/environment";
+import './utils/polyfills';
+import {Environment} from './models/environment';
 
 declare const env: Environment;
 declare const version: string;
 
 // Import assets
-import "../css/main.scss";
+import '../css/main.scss';
 
 // Imports
-import * as React from "react";
-import ReactDOM from "react-dom";
-import {BrowserRouter as Router/*, Route, Switch*/} from "react-router-dom";
-import {Provider} from "react-redux";
+import * as React from 'react';
+import ReactDOM from 'react-dom';
+import {BrowserRouter as Router/*, Route, Switch*/} from 'react-router-dom';
+import {Provider} from 'react-redux';
 
-import {store} from "./data/store";
+import {store} from './data/store';
 
-import IconsDefinitions from "./components/icons-definitions";
+import IconsDefinitions from './components/icons-definitions';
 
 // Routes
 
 const syncServiceWorker = async function(registration: ServiceWorkerRegistration): Promise<void>{
   // Fetch the manifest to see if version matches
   try{
-    const response: Response = await fetch("/manifest.json");
+    const response: Response = await fetch('/manifest.json');
     const latestVersion: string = await response.json();
 
     if(latestVersion !== version)
@@ -32,7 +32,7 @@ const syncServiceWorker = async function(registration: ServiceWorkerRegistration
   }
 };
 
-document.addEventListener("DOMContentLoaded", () => {
+document.addEventListener('DOMContentLoaded', () => {
   ReactDOM.render(
     <Provider store={store}>
       <Router>
@@ -41,13 +41,13 @@ document.addEventListener("DOMContentLoaded", () => {
         </div>
       </Router>
     </Provider>,
-    document.getElementById("root")
+    document.getElementById('root')
   );
 
   // Service workers
   if(navigator.serviceWorker){
-    if(env.serviceWorkerEnabled && env.environment === "production")
-      navigator.serviceWorker.register("/sw.js").then(syncServiceWorker).catch(console.error);
+    if(env.serviceWorkerEnabled && env.environment === 'production')
+      navigator.serviceWorker.register('/sw.js').then(syncServiceWorker).catch(console.error);
     else{
       navigator.serviceWorker.getRegistrations().then((registrations: Array<ServiceWorkerRegistration>) => (
         registrations.map((r: ServiceWorkerRegistration) => r.unregister())

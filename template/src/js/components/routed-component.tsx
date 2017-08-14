@@ -1,9 +1,9 @@
-import * as React from "react";
+import * as React from 'react';
 
-import PropTypes from "prop-types";
-import {matchPath, match as matchResult} from "react-router";
+import PropTypes from 'prop-types';
+import {matchPath, match as matchResult} from 'react-router';
 
-import Dictionary from "../models/dictionary";
+import Dictionary from '../models/dictionary';
 
 export default function routedComponent<P = {}>(rawPath: string, WrappedComponent: React.ComponentClass<any>): React.ComponentClass<P>{
   return class extends React.Component<P, {routerParams: Dictionary}>{
@@ -34,7 +34,7 @@ export default function routedComponent<P = {}>(rawPath: string, WrappedComponen
 
     componentWillReceiveProps(_props: P, context: any): void{
       const url: string = context.router.route.location.pathname;
-      const path: string = "/" + rawPath.split("/").filter((t: string) => t).map((t: string) => `${t}?`).join("/");
+      const path: string = '/' + rawPath.split('/').filter((t: string) => t).map((t: string) => `${t}?`).join('/');
       const match: matchResult<{}> = matchPath(url, {path, exact: false, strict: false});
 
       this.setState(() => ({routerParams: match ? match.params : null}));

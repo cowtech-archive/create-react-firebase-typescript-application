@@ -1,9 +1,9 @@
-import * as React from "react";
+import * as React from 'react';
 
-import {BEM, BEMClass} from "../utils/dom-utils";
+import {BEM, BEMClass} from '../utils/dom-utils';
 
 declare const ICONS: {[name: string]: {tag: string, reference: string, definition: string}};
-const bem: BEMClass = BEM("Icon");
+const bem: BEMClass = BEM('Icon');
 
 interface IconProps{
   name: string;
@@ -20,6 +20,6 @@ export default class Icon extends React.Component<IconProps>{
       return null;
     }
 
-    return <svg className={bem(null, this.props.name, ["icon", this.props.className])}><use xlinkHref={`#${icon.tag}`}/></svg>;
+    return <svg className={bem(null, this.props.name, ['icon', this.props.className])}><use xlinkHref={`#${icon.tag}`}/></svg>;
   }
 }

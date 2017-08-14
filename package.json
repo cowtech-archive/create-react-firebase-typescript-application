@@ -11,7 +11,7 @@
   ],
   "bin": "./index.js",
   "scripts": {
-    "lint": "./node_modules/.bin/eslint index.js template/index.js",
+    "lint": "eslint index.js template/index.js",
     "postpublish": "git push origin && git push origin -f --tags"
   },
   "repository": {
