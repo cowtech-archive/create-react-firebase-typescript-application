@@ -7,7 +7,7 @@
     "build": "webpack --env=production --progress",
     "dev": "webpack-dev-server --progress",
     "deploy": "firebase deploy --only hosting",
-    "lint": "./node_modules/.bin/tslint --project tsconfig.json -t stylish --type-check",
+    "lint": "tslint --project tsconfig.json -t stylish --type-check",
     "audit": "mkdir -p tmp && lighthouse https://home.cowtech.it:4200 --output html --output-path tmp/lighthouse.html --view",
     "f:dev": "rollup -w -c google-cloud-functions/rollup.config.js",
     "f:build": "rollup --environment production -c cloud-functions/rollup.config.js",

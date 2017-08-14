@@ -1,3 +1,7 @@
+### 2017-08-14 / 0.5.1
+
+* Minor development fix.
+
 ### 2017-08-14 / 0.5.0
 
 * Updated dependencies.
