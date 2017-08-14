@@ -1,3 +1,8 @@
+### 2017-08-14 / 0.4.3
+
+* Updated dependencies.
+* Added linting.
+
 ### 2017-07-24 / 0.4.2
 
 * Added audit command.

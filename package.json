@@ -11,6 +11,7 @@
   ],
   "bin": "./index.js",
   "scripts": {
+    "lint": "./node_modules/.bin/eslint index.js template/index.js",
     "postpublish": "git push origin && git push origin -f --tags"
   },
   "repository": {
@@ -30,7 +31,11 @@
     "node": ">=8.0.0"
   },
   "dependencies": {
-    "@cowtech/create-base": "~0.0",
-    "@cowtech/package-utils": "~0.2"
+    "@cowtech/create-base": "~0.1"
+  },
+  "devDependencies": {
+    "@cowtech/eslint-config": "~4.4",
+    "@cowtech/package-utils": "~0.2",
+    "eslint": "~4.4"
   }
 }

@@ -1,3 +1,3 @@
 #!/usr/bin/env node
 
-require("@cowtech/create-base")();
+require('@cowtech/create-base')();
