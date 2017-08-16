@@ -1,5 +1,5 @@
-export interface Dictionary<V = string>{
+export interface RawDictionary<V = string>{
   [key: string]: V;
 }
 
-export default Dictionary;
+export type Dictionary<V = string> = Map<string, V>;

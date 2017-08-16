@@ -1,3 +1,7 @@
+### 2017-08-16 / 0.7.0
+
+* Use two Dictionary types.
+
 ### 2017-08-16 / 0.6.4
 
 * Added f:serve script.

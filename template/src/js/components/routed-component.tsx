@@ -3,10 +3,10 @@ import * as React from 'react';
 import PropTypes from 'prop-types';
 import {matchPath, match as matchResult} from 'react-router';
 
-import Dictionary from '../models/dictionary';
+import {RawDictionary} from '../models/dictionary';
 
 export default function routedComponent<P = {}>(rawPath: string, WrappedComponent: React.ComponentClass<any>): React.ComponentClass<P>{
-  return class extends React.Component<P, {routerParams: Dictionary}>{
+  return class extends React.Component<P, {routerParams: RawDictionary}>{
     static contextTypes = {
       router: PropTypes.shape({
         history: PropTypes.object.isRequired,
