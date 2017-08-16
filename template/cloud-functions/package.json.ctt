@@ -6,8 +6,6 @@
   "main": "index.js",
   "files": ["index.js"],
   "author": "{{author}} <{{authorEmail}}>",
-  "license": "MIT",
-  "homepage": "https://money-cowtech-it.it",
   "dependencies": {
     "core-js": "~2.5",
     "firebase-admin": "~5.2",

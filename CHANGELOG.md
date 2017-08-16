@@ -1,3 +1,7 @@
+### 2017-08-16 / 0.6.2
+
+* Minor fix.
+
 ### 2017-08-16 / 0.6.1
 
 * Temporary fix for React typings until React 16 is released.
