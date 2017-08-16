@@ -1,3 +1,7 @@
+### 2017-08-16 / 0.6.0
+
+* Updated template dependencies.
+
 ### 2017-08-14 / 0.5.1
 
 * Minor development fix.

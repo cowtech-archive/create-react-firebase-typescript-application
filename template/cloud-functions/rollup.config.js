@@ -9,7 +9,7 @@ export default {
   format: "cjs",
 
   plugins: [
-    typescript({clean: true, cacheRoot: "tmp/.rpt2_cache", tsconfig: "tsconfig.node.json"})
+    typescript({clean: true, cacheRoot: "tmp/.rpt2_cache", tsconfig: "tsconfig.f.json"})
   ],
   external: [...Object.keys(require("./package.json").dependencies)],
   intro: `const env = ${JSON.stringify(Object.assign({environment: env}, packageInfo.site.common, packageInfo.site[env] || {}))};`

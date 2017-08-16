@@ -9,8 +9,8 @@
   "license": "MIT",
   "homepage": "https://money-cowtech-it.it",
   "dependencies": {
-    "core-js": "~2.4",
-    "firebase-admin": "~5.0",
-    "firebase-functions": "~0.5"
+    "core-js": "~2.5",
+    "firebase-admin": "~5.2",
+    "firebase-functions": "~0.6"
   }
 }
