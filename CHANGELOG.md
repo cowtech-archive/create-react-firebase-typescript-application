@@ -1,3 +1,7 @@
+### 2017-08-16 / 0.6.1
+
+* Temporary fix for React typings until React 16 is released.
+
 ### 2017-08-16 / 0.6.0
 
 * Updated template dependencies.

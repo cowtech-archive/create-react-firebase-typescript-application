@@ -1,7 +1,7 @@
 // tslint:disable jsx-self-close jsx-boolean-value
 
-require("./images/favicon.png");
-require("./manifest.json");
+require('./images/favicon.png');
+require('./manifest.json');
 
 import * as React from 'react';
 import ReactDOMServer from 'react-dom/server';
@@ -31,9 +31,9 @@ const index: string = ReactDOMServer.renderToStaticMarkup(
       <link rel="shortcut icon" href="images/favicon.png" sizes="196x196"/>
       <link rel="manifest" href="/manifest.json"/>
 
-      {env.environment === "production" && <style dangerouslySetInnerHTML={{__html: require('./css/main.scs').toString()}}/>}
-      <script defer={true} type="text/javascript" src="https://www.gstatic.com/firebasejs/4.1.3/firebase-app.js"></script>
-      {env.environment === "development" && <script defer={true} type="text/javascript" src="webpack-bootstrap.js"></script>}
+      {env.environment === 'production' && <style dangerouslySetInnerHTML={{__html: require('./css/main.scs').toString()}}/>}
+      <script defer={true} type="text/javascript" src="https://www.gstatic.com/firebasejs/4.2.0/firebase-app.js"></script>
+      {env.environment === 'development' && <script defer={true} type="text/javascript" src="webpack-bootstrap.js"></script>}
       <script defer={true} type="text/javascript" src="/js/app.js"></script>
     </head>
     <body>

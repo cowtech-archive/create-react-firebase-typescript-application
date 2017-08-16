@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-import {BEM, BEMClass} from "../utils/dom-utils";
+import {BEM, BEMClass} from '../utils/dom-utils';
 
 interface IconDefinition{
   tag: string;
@@ -9,7 +9,7 @@ interface IconDefinition{
 }
 
 declare const ICONS: {[name: string]: IconDefinition};
-const bem: BEMClass = BEM("IconsDefinitions");
+const bem: BEMClass = BEM('IconsDefinitions');
 
 export default class IconsDefinitions extends React.Component{
   render(): JSX.Element{

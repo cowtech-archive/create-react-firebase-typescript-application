@@ -10,7 +10,11 @@
     "noUnusedLocals": true,
     "noUnusedParameters": true,
     "experimentalDecorators": true,
-    "lib": ["es2017"]
+    "lib": ["es2017"],
+    "baseUrl": ".",
+    "paths": {
+      "react": ["node_modules/@types/react"]
+    }
   },
   "include": [
     "src/**/*.ts"
