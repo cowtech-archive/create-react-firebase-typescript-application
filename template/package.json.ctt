@@ -9,9 +9,9 @@
     "deploy": "firebase deploy --only hosting",
     "lint": "tslint --project tsconfig.json -t stylish --type-check",
     "audit": "mkdir -p tmp && lighthouse https://home.cowtech.it:4200 --output html --output-path tmp/lighthouse.html --view",
-    "f:dev": "rollup -w -c google-cloud-functions/rollup.config.js",
+    "f:dev": "rollup -w -c cloud-functions/rollup.config.js",
     "f:build": "rollup --environment production -c cloud-functions/rollup.config.js",
-    "f:deploy": "rollup --silent --environment production -c google-cloud-functions/rollup.config.js && firebase deploy --only functions",
+    "f:deploy": "rollup --silent --environment production -c cloud-functions/rollup.config.js && firebase deploy --only functions",
     "pref:setup": "mkdir -p /tmp/gcf-{{name}} && rm -rf /tmp/gcf-{{name}}/* cloud-functions/node_modules",
     "f:setup": "cp cloud-functions/package.json /tmp/gcf-{{name}} && cd /tmp/gcf-{{name}} && yarn install",
     "postf:setup": "cp -a /tmp/gcf-{{name}}/{yarn.lock,node_modules} cloud-functions/"
