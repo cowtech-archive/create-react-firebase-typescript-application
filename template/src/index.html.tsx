@@ -31,7 +31,7 @@ const index: string = ReactDOMServer.renderToStaticMarkup(
       <link rel="shortcut icon" href="images/favicon.png" sizes="196x196"/>
       <link rel="manifest" href="/manifest.json"/>
 
-      {env.environment === 'production' && <style dangerouslySetInnerHTML={{__html: require('./css/main.scs').toString()}}/>}
+      {env.environment === 'production' && <style dangerouslySetInnerHTML={{__html: require('./css/main.scss').toString()}}/>}
       <script defer={true} type="text/javascript" src="https://www.gstatic.com/firebasejs/4.2.0/firebase-app.js"></script>
       {env.environment === 'development' && <script defer={true} type="text/javascript" src="webpack-bootstrap.js"></script>}
       <script defer={true} type="text/javascript" src="/js/app.js"></script>

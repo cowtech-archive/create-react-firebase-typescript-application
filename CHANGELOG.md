@@ -1,3 +1,7 @@
+### 2017-08-17 / 0.8.1
+
+* Bugfix.
+
 ### 2017-08-16 / 0.8.0
 
 * Do not use two Dictionary types.
