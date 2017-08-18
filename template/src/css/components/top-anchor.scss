@@ -1,0 +1,41 @@
+$top-anchor-background-color: $custom-color-blue;
+$top-anchor-foreground-color: map-get($palette, white);
+
+@import "lazier/modules/top-anchor";
+
+.TopAnchor{
+  @extend %top-anchor;
+  cursor: pointer;
+
+  &:hover{
+    color: map-get($palette, white);
+    background-color: map-get($palette, teal-800);
+  }
+
+  &--hidden{
+    &, &:hover{
+      opacity: 0;
+    }
+  }
+}
+
+@media (max-width: map-get($breakpoints, mw6xx)){
+  .TopAnchor{
+    width: 3em;
+    height: 3em;
+  }
+}
+
+@media (max-width: map-get($breakpoints, mw45xx)){
+  .TopAnchor{
+    width: 2em;
+    height: 2em;
+  }
+}
+
+@media (max-height: map-get($breakpoints, mh6xx)){
+  .TopAnchor{
+    width: 2em;
+    height: 2em;
+  }
+}

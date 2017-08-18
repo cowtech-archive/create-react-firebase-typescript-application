@@ -1,3 +1,7 @@
+### 2017-08-18 / 0.10.0
+
+* Added BrowseHappy component.
+
 ### 2017-08-18 / 0.9.0
 
 * Added react-router-redux.
