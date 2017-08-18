@@ -54,4 +54,11 @@ document.addEventListener('DOMContentLoaded', () => {
       ));
     }
   }
+
+  // Browse Happy
+  const browseHappy: HTMLElement = document.getElementById('browseHappy');
+  if(navigator.userAgent.indexOf('MSIE') !== -1 || typeof CSS.supports !== 'function' || !CSS.supports('display', 'grid') || !CSS.supports('display', 'flex'))
+    browseHappy.classList.remove('BrowseHappy--hidden');
+  else
+    browseHappy.remove();
 });
