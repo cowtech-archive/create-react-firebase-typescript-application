@@ -1,3 +1,7 @@
+### 2017-08-18 / 0.9.0
+
+* Added react-router-redux.
+
 ### 2017-08-17 / 0.8.1
 
 * Bugfix.

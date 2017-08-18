@@ -30,6 +30,7 @@
     "react-dom": "~15.6",
     "react-redux": "~5.0",
     "react-router-dom": "~4.1",
+    "react-router-redux": "5.0.0-alpha.6",
     "redux": "~3.7",
     "redux-thunk": "~2.2",
     "whatwg-fetch": "~2.0"
@@ -45,6 +46,7 @@
     "@types/react-redux": "~5.0",
     "@types/react-router": "~4.0",
     "@types/react-router-dom": "~4.0",
+    "@types/react-router-redux": "~5.0",
     "rollup": "~0.47",
     "rollup-plugin-typescript2": "~0.5",
     "rollup-watch": "~4.3",

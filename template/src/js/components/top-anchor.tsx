@@ -21,7 +21,7 @@ export default class TopAnchor extends React.Component{
 
   render(): JSX.Element{
     return (
-      <a ref={(el: HTMLAnchorElement) => this.element = el} className={bem(null, 'hidden')} onClick={this.handleScrollToTop} href="#top" title="Top">
+      <a ref={(el: HTMLAnchorElement) => this.element = el} className={bem(null, 'hidden')} onClick={this.handleScrollToTop.bind(this)} href="#top" title="Top">
         <Icon name="chevron-up"/>
       </a>
     );
@@ -44,10 +44,12 @@ export default class TopAnchor extends React.Component{
     if(!this.element)
       return;
 
-    this.element.classList.toggle(bem(null, 'hidden'), window.pageYOffset === 0);
+    this.element.classList.toggle(bem(null, 'hidden').split(' ').pop(), window.pageYOffset === 0);
   }
 
-  handleScrollToTop(): void{
+  handleScrollToTop(ev: React.SyntheticEvent<MouseEvent>): void{
+    ev.preventDefault();
+
     const startTime: number = new Date().getTime();
     const base: number = document.body.scrollTop;
 

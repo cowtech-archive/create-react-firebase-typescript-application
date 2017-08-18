@@ -1,13 +1,14 @@
 const onServer: boolean = typeof window === 'undefined'; // tslint:disable-line strict-type-predicates
 
-import React from 'react';
-import {createStore, applyMiddleware, compose} from 'redux';
-import {connect as reduxConnect} from 'react-redux';
-import {RouteComponentProps} from 'react-router';
+import {createStore, applyMiddleware, compose, combineReducers, Store} from 'redux';
+import createHistory from 'history/createBrowserHistory';
+import {routerReducer, routerMiddleware, RouterAction} from 'react-router-redux';
 import thunk from 'redux-thunk';
 import * as firebase from 'firebase';
 
 import Environment from '../models/environment';
+import {GlobalState} from '../models/state';
+import {reducer} from './reducers';
 
 interface ExtendedWindow extends Window{
   __REDUX_DEVTOOLS_EXTENSION_COMPOSE__?: any;
@@ -22,8 +23,10 @@ if(!onServer){
   (window as ExtendedWindow).showEnvironment = () => console.log(env);
 }
 
-export interface State{
+export type Dispatch = (action: Action | AsyncAction | RouterAction) => Action;
 
+export interface Dispatcher{
+  dispatch?: Dispatch;
 }
 
 export interface Action{
@@ -31,45 +34,16 @@ export interface Action{
   payload?: any;
 }
 
-export type Dispatch = (action: Action | AsyncAction) => Action;
+export type AsyncAction = (dispatch: Dispatch, getState?: () => GlobalState) => void;
 
-interface Dispatcher{
-  dispatch: Dispatch;
-}
-
-export type AsyncAction = (dispatch: Dispatch, getState?: () => State) => void;
-
-export type RouteProps<T = {}> = Dispatcher & RouteComponentProps<T>;
-export type RouteState<T = {}> = State & RouteComponentProps<T> & Dispatcher;
-export type Connector<T = RouteState, R = {}> = (state: T, ownProps?: RouteProps<R>) => T;
-
-export type ConnectedState = State & {dispatch?: Dispatch};
-
-// A default no-op state connector
-export function stateConnector<T = RouteState>(state: T): T{
-  return state;
-}
-
-export function connectComponent<T = RouteState, R = {}>(component: React.ComponentClass<T>, connector: Connector<T, R> = stateConnector){
-  return reduxConnect<T, any, RouteProps<R>>(connector, null)(component);
-}
-
-export function reducer(state: State, {type/*, payload*/}: Action): State{
-  let newState: State = state;
-
-  switch(type){
-
-  }
-
-  return newState;
-}
-
-export const initialState: State = {
-
-};
+export type ConnectedProps<T> = T & Dispatcher;
 
 // The main store
-export const store: any = createStore(reducer, initialState, composeEnhancers(applyMiddleware(thunk)));
+export const history = !onServer ? createHistory() : null;
+export const store: Store<GlobalState> = createStore(
+  combineReducers({application: reducer, router: routerReducer}),
+  composeEnhancers(applyMiddleware(routerMiddleware(history), thunk))
+);
 
 // Initialize Firebase
 if(!onServer){
