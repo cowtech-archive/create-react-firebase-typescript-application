@@ -1,3 +1,7 @@
+### 2017-08-19 / 0.10.1
+
+* Bugfix.
+
 ### 2017-08-18 / 0.10.0
 
 * Added BrowseHappy component.
