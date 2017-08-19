@@ -1,6 +1,7 @@
 const onServer: boolean = typeof window === 'undefined'; // tslint:disable-line strict-type-predicates
 
 import {createStore, applyMiddleware, compose, combineReducers, Store} from 'redux';
+import {History} from 'history';
 import createHistory from 'history/createBrowserHistory';
 import {routerReducer, routerMiddleware, RouterAction} from 'react-router-redux';
 import thunk from 'redux-thunk';
@@ -39,7 +40,7 @@ export type AsyncAction = (dispatch: Dispatch, getState?: () => GlobalState) => 
 export type ConnectedProps<T> = T & Dispatcher;
 
 // The main store
-export const history = !onServer ? createHistory() : null;
+export const history: History = !onServer ? createHistory() : null;
 export const store: Store<GlobalState> = createStore(
   combineReducers({application: reducer, router: routerReducer}),
   composeEnhancers(applyMiddleware(routerMiddleware(history), thunk))
