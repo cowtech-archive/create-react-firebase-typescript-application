@@ -1,5 +1,5 @@
 export interface State{
-  
+
 }
 
 export interface GlobalState{
