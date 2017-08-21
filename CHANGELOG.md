@@ -1,3 +1,7 @@
+### 2017-08-21 / 0.10.5
+
+* Minor initialState improvement.
+
 ### 2017-08-19 / 0.10.4
 
 * Bugfix.
