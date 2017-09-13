@@ -1,4 +1,3 @@
-import './utils/polyfills';
 import {Environment} from './models/environment';
 
 declare const env: Environment;

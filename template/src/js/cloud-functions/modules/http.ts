@@ -1,6 +1,5 @@
 import * as functions from 'firebase-functions';
 
-import {Dictionary} from '../../models/dictionary';
 import {S_TO_MS, US_TO_MS} from '../../models/constants';
 
 interface CustomErrorBase{
@@ -16,7 +15,7 @@ export interface ExtendedResponse extends functions.Response{
   startTime?: [number, number];
 }
 
-export const Statuses: Dictionary<number> = {
+export const Statuses: {[key: string]: number} = {
   OK: 200, NO_CONTENT: 204, FORBIDDEN: 403, SERVER_ERROR: 500, GATEWAY_ERROR: 502
 };
 

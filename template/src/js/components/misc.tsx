@@ -15,7 +15,7 @@ interface IconProps{
 
 declare const ICONS: Icons;
 
-export default class Emoji extends React.Component<{code: string}>{
+export class Emoji extends React.Component<{code: string}>{
   render(): JSX.Element{
     return <span className="Emoji" dangerouslySetInnerHTML={{__html: `&#x${this.props.code};`}}/>;
   }
@@ -60,7 +60,7 @@ export function BrowseHappy(): JSX.Element{
   );
 }
 
-export default class TopAnchor extends React.Component{
+export class TopAnchor extends React.Component{
   static animationProgress(startTime: number, duration: number = 350): number{
     return Math.min((new Date().getTime() - startTime) / duration, 1);
   }

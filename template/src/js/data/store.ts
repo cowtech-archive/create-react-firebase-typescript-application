@@ -7,7 +7,7 @@ import {routerReducer, routerMiddleware, RouterAction} from 'react-router-redux'
 import thunk from 'redux-thunk';
 import * as firebase from 'firebase';
 
-import Environment from '../models/environment';
+import {Environment} from '../models/environment';
 import {GlobalState} from '../data/state';
 import {reducer} from './reducers';
 

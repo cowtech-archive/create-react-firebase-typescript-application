@@ -19,7 +19,7 @@ export class MainRouteComponent extends React.Component<ConnectedProps<MainRoute
 
   render(): JSX.Element{
     return (
-      <main className={bem()}/>
+      <main className={this.bem()}/>
     );
   }
 }

@@ -1,11 +1,8 @@
-const cowtechWebpack = require('@cowtech/webpack-config');
+const {setup} = require('@cowtech/webpack-config');
 
 module.exports = function(env){
-  return cowtechWebpack.webpackConfig(env, {
-    entries: {
-      'js/app.js': './src/js/application.tsx',
-      'sw.js': './src/js/service-worker.ts'
-    },
+  return setup(env, {
+    entries: {'js/app.js': './src/js/application.tsx'},
     indexFile: 'src/index.html.tsx',
     transpilers: ['typescript', 'react'],
     distFolder: 'dist',

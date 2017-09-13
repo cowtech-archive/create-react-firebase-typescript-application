@@ -1,3 +1,7 @@
+### 2017-09-13 / 0.12.0
+
+* Improvements.
+
 ### 2017-08-21 / 0.11.0
 
 * Updated to @cowtech/webpack-config 0.7.0.
