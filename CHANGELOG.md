@@ -1,3 +1,7 @@
+### 2017-09-13 / 0.12.2
+
+* Bump client side Firebase version.
+
 ### 2017-09-13 / 0.12.1
 
 * Updated dependencies.
