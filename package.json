@@ -34,8 +34,8 @@
     "@cowtech/create-base": "~0.1"
   },
   "devDependencies": {
-    "@cowtech/eslint-config": "~4.4",
+    "@cowtech/eslint-config": "~4.6",
     "@cowtech/package-utils": "~0.2",
-    "eslint": "~4.4"
+    "eslint": "~4.6"
   }
 }
