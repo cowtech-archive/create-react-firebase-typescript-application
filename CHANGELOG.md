@@ -1,3 +1,10 @@
+### 2017-08-21 / 0.11.0
+
+* Updated to @cowtech/webpack-config 0.7.0.
+* Do not bundle font-awesome SVG by default.
+* Reorganized file layout.
+* Merge visual components in the `components/misc` file.
+
 ### 2017-08-21 / 0.10.5
 
 * Minor initialState improvement.

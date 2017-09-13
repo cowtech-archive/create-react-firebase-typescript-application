@@ -4,6 +4,7 @@
   "description": "{{description}}",
   "private": true,
   "scripts": {
+    "prebuild": "rm -rf dist/*",
     "build": "webpack --env=production --progress",
     "dev": "webpack-dev-server --progress",
     "deploy": "firebase deploy --only hosting",
@@ -20,8 +21,7 @@
   "author": "{{author}} <{{authorEmail}}>",
   "license": "MIT",
   "dependencies": {
-    "core-js": "~2.5",
-    "firebase": "~4.2",
+    "firebase": "~4.3",
     "firebase-admin": "~5.2",
     "firebase-functions": "~0.6",
     "lazier.sass": "~4.4",
@@ -29,30 +29,21 @@
     "react-bem-helper": "~1.4",
     "react-dom": "~15.6",
     "react-redux": "~5.0",
-    "react-router-dom": "~4.1",
+    "react-router-dom": "~4.2",
     "react-router-redux": "5.0.0-alpha.6",
     "redux": "~3.7",
-    "redux-thunk": "~2.2",
-    "whatwg-fetch": "~2.0"
+    "redux-thunk": "~2.2"
   },
   "devDependencies": {
-    "@cowtech/tslint-config": "~5.6",
-    "@cowtech/webpack-config": "~0.5",
-    "@types/core-js": "~0.9",
+    "@cowtech/webpack-config": "~0.7",
     "@types/node": "~8.0",
     "@types/prop-types": "~15.5",
-    "@types/react": "~15.0",
+    "@types/react": "~16.0",
     "@types/react-dom": "~15.5",
     "@types/react-redux": "~5.0",
     "@types/react-router": "~4.0",
     "@types/react-router-dom": "~4.0",
-    "@types/react-router-redux": "~5.0",
-    "rollup": "~0.47",
-    "rollup-plugin-typescript2": "~0.5",
-    "rollup-watch": "~4.3",
-    "tslint": "~5.6",
-    "webpack": "~3.5",
-    "webpack-dev-server": "~2.7"
+    "@types/react-router-redux": "~5.0"
   },
   "engines": {
     "node": ">= 8.0"

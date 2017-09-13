@@ -1,4 +1,4 @@
-import {State} from '../models/state';
+import {State} from '../data/state';
 import {Action} from './store';
 
 const initialState: State = {};

@@ -1,2 +1,2 @@
-// import {State} from '../models/state';
-// import {Dispatch, AsyncAction} from './store';
+// import {State} from '../state';
+// import {Action} from './store';

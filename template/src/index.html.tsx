@@ -2,6 +2,7 @@
 
 require('./images/favicon.png');
 require('./manifest.json');
+require('./robots.txt');
 
 import * as React from 'react';
 import ReactDOMServer from 'react-dom/server';
@@ -13,7 +14,7 @@ import {store} from './js/data/store';
 
 declare const env: Environment;
 
-import IconsDefinitions from './js/components/icons-definitions';
+import {IconsDefinitions, BrowseHappy} from './js/components/misc';
 
 const structuredData: any = {
 
@@ -64,6 +65,7 @@ const index: string = ReactDOMServer.renderToStaticMarkup(
         <Router location={'/'} context={{}}>
           <div id="root" className="root">
             <div id="main" className="main">
+              <BrowseHappy/>
               <IconsDefinitions/>
             </div>
           </div>

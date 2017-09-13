@@ -2,11 +2,9 @@ import * as React from 'react';
 import {connect} from 'react-redux';
 import {RouteComponentProps} from 'react-router';
 
-import {GlobalState} from '../models/state';
-import {ConnectedProps} from '../data/store';
+import {GlobalState} from '../data/state';
+import {ConnectedComponent, ConnectedProps} from '../data/store';
 import {BEM, BEMClass} from '../utils/dom-utils';
-
-const bem: BEMClass = BEM('MainRoute');
 
 interface MainRouteProps{
 
@@ -16,7 +14,9 @@ const mapStateToProps = function(_state: GlobalState, _ownProps: RouteComponentP
   return {};
 };
 
-export class MainRoute extends React.Component<ConnectedProps<MainRouteProps>>{
+export class MainRouteComponent extends React.Component<ConnectedProps<MainRouteProps>>{
+  private bem: BEMClass = BEM('MainRoute');
+
   render(): JSX.Element{
     return (
       <main className={bem()}/>
@@ -24,4 +24,4 @@ export class MainRoute extends React.Component<ConnectedProps<MainRouteProps>>{
   }
 }
 
-export default connect(mapStateToProps, null)(MainRoute);
+export const MainRoute: ConnectedComponent<ConnectedProps<MainRouteProps>, RouteComponentProps<{}>> = connect(mapStateToProps, null)(MainRouteComponent);

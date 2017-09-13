@@ -15,5 +15,3 @@ export interface Environment{
     storageBucket: string;
   };
 }
-
-export default Environment;
