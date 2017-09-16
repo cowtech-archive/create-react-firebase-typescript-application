@@ -1,3 +1,7 @@
+### 2017-09-16 / 0.12.3
+
+* Minor fix.
+
 ### 2017-09-13 / 0.12.2
 
 * Bump client side Firebase version.
