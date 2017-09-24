@@ -51,7 +51,6 @@ const index: string = ReactDOMServer.renderToStaticMarkup(
       <meta property="og:image:height" content="250"/>
       <meta property="og:image:alt" content={env.description}/>
       <meta property="og:locale" content="it"/>
-      <meta property="og:type" content="profile"/>
       <meta property="fb:app_id" content=""/>
       <meta property="fb:profile_id" content=""/>
       <meta name="twitter:card" content="summary"/>
