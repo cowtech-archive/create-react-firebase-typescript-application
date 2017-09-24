@@ -14,7 +14,7 @@ import {store} from './js/data/store';
 
 declare const env: Environment;
 
-import {IconsDefinitions, BrowseHappy, TopAnchor} from './js/components/misc';
+import {IconsDefinitions, BrowseHappy, TopAnchor, Spinner} from './js/components/misc';
 
 const structuredData: any = {
 
@@ -64,6 +64,7 @@ const index: string = ReactDOMServer.renderToStaticMarkup(
         <Provider store={store}>
           <Router location={'/'} context={{}}>
               <div id="main" className="main">
+                <Spinner/>
               </div>
           </Router>
         </Provider>

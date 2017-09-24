@@ -46,6 +46,44 @@ $top-anchor-foreground-color: map-get($palette, white);
   }
 }
 
+/* Adapted from here: https://tech.scrunch.com/blog/creating-an-animated-svg-spinner/ */
+$spinnerSize: 66;
+$spinnerDuration: 2s;
+
+@keyframes spinner {
+  0%{
+    stroke-dashoffset: (0.66 * $spinnerSize);
+    transform: rotate(0deg);
+  }
+  50%{
+    stroke-dashoffset: (3.14 * $spinnerSize);
+    transform: rotate(720deg);
+  }
+  100%{
+    stroke-dashoffset: (0.66 * $spinnerSize);
+    transform: rotate(1080deg);
+  }
+}
+
+.Spinner{
+  &__icon{
+    width: ($spinnerSize / 10) + rem;
+    height: ($spinnerSize / 10) + rem;
+  }
+
+  &__icon-path{
+    width: ($spinnerSize / 10) + rem;
+    height: ($spinnerSize / 10) + rem;
+    fill: transparent;
+    stroke: map-get($palette, black);
+    stroke-width: 6;
+    stroke-linecap: round;
+    stroke-dasharray: 3.14 * $spinnerSize;
+    animation: spinner $spinnerDuration linear infinite;
+    transform-origin: center;
+  }
+}
+
 @media (max-width: map-get($breakpoints, mw6xx)){
   .TopAnchor{
     width: 3em;

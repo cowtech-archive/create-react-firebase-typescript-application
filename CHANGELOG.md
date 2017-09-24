@@ -1,3 +1,7 @@
+### 2017-09-24 / 0.12.6
+
+* Added spinner component.
+
 ### 2017-09-24 / 0.12.5
 
 * Minor template fix.

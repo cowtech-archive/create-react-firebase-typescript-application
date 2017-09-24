@@ -128,3 +128,14 @@ export class TopAnchor extends React.Component{
     animate();
   }
 }
+
+export function Spinner(text?: string): JSX.Element{
+  return (
+    <main className="Spinner">
+      <svg className="Spinner__icon" viewBox="0 0 66 66">
+        <circle className="Spinner__icon-path" fill="none" strokeWidth="6" strokeLinecap="round" cx="33" cy="33" r="30"/>
+      </svg>
+      {text && <h3 className="Spinner__title">{text}</h3>}
+    </main>
+  );
+}
