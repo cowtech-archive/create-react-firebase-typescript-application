@@ -1,3 +1,7 @@
+### 2017-09-24 / 0.12.5
+
+* Minor template fix.
+
 ### 2017-09-24 / 0.12.4
 
 * Minor template fix.

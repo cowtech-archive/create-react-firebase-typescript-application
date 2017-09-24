@@ -13,8 +13,6 @@ import {Provider} from 'react-redux';
 
 import {store} from './data/store';
 
-import {IconsDefinitions, BrowseHappy} from './components/misc';
-
 // Routes
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -22,8 +20,6 @@ document.addEventListener('DOMContentLoaded', () => {
     <Provider store={store}>
       <Router>
         <div id="main" className="main">
-          <BrowseHappy/>
-          <IconsDefinitions/>
         </div>
       </Router>
     </Provider>,

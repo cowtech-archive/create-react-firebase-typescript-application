@@ -14,7 +14,7 @@ import {store} from './js/data/store';
 
 declare const env: Environment;
 
-import {IconsDefinitions, BrowseHappy} from './js/components/misc';
+import {IconsDefinitions, BrowseHappy, TopAnchor} from './js/components/misc';
 
 const structuredData: any = {
 
@@ -60,16 +60,18 @@ const index: string = ReactDOMServer.renderToStaticMarkup(
       <meta name="twitter:image" content=""/>
     </head>
     <body>
-      <Provider store={store}>
-        <Router location={'/'} context={{}}>
-          <div id="root" className="root">
-            <div id="main" className="main">
-              <BrowseHappy/>
-              <IconsDefinitions/>
-            </div>
-          </div>
-        </Router>
-      </Provider>
+      <div id="root" className="root">
+        <Provider store={store}>
+          <Router location={'/'} context={{}}>
+              <div id="main" className="main">
+              </div>
+          </Router>
+        </Provider>
+      </div>
+
+      <TopAnchor/>
+      <BrowseHappy/>
+      <IconsDefinitions/>
     </body>
   </html>
 );
