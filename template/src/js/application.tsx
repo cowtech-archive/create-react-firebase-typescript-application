@@ -8,22 +8,26 @@ import '../css/main.scss';
 // Imports
 import * as React from 'react';
 import ReactDOM from 'react-dom';
-import {BrowserRouter as Router/*, Route, Switch*/} from 'react-router-dom';
+import {Route, Switch} from 'react-router-dom';
+import {ConnectedRouter as Router} from 'react-router-redux';
 import {Provider} from 'react-redux';
 
-import {store} from './data/store';
+import {store, history} from './data/store';
 
 // Routes
 
 document.addEventListener('DOMContentLoaded', () => {
+  const main: HTMLElement = document.getElementById('main');
+  main.innerHTML = '';
+
   ReactDOM.render(
     <Provider store={store}>
-      <Router>
+      <Router history={history}>
         <div id="main" className="main">
         </div>
       </Router>
     </Provider>,
-    document.getElementById('root')
+    main
   );
 
   // Service workers

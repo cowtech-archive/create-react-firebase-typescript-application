@@ -21,7 +21,7 @@ const structuredData: any = {
 };
 
 const index: string = ReactDOMServer.renderToStaticMarkup(
-  <html>
+  <html lang="en">
     <head>
       <title>{env.title}</title>
       <meta httpEquiv="X-UA-Compatible" content="IE=edge"/>

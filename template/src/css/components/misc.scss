@@ -66,6 +66,9 @@ $spinnerDuration: 2s;
 }
 
 .Spinner{
+  align-self: center;
+  justify-self: center;
+
   &__icon{
     width: ($spinnerSize / 10) + rem;
     height: ($spinnerSize / 10) + rem;

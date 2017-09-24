@@ -129,7 +129,7 @@ export class TopAnchor extends React.Component{
   }
 }
 
-export function Spinner(text?: string): JSX.Element{
+export function Spinner({text}: {text?: string}): JSX.Element{
   return (
     <main className="Spinner">
       <svg className="Spinner__icon" viewBox="0 0 66 66">

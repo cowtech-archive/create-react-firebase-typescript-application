@@ -1,3 +1,7 @@
+### 2017-09-24 / 0.12.7
+
+* Various improvements.
+
 ### 2017-09-24 / 0.12.6
 
 * Added spinner component.

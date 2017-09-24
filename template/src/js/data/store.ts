@@ -1,8 +1,10 @@
 const onServer: boolean = typeof window === 'undefined'; // tslint:disable-line strict-type-predicates
 
+import * as React from 'react';
 import {createStore, applyMiddleware, compose, combineReducers, Store} from 'redux';
 import {History} from 'history';
 import createHistory from 'history/createBrowserHistory';
+import {RouteComponentProps} from 'react-router';
 import {routerReducer, routerMiddleware, RouterAction} from 'react-router-redux';
 import thunk from 'redux-thunk';
 import * as firebase from 'firebase';
@@ -42,7 +44,14 @@ export interface Action{
 export type AsyncAction = (dispatch: Dispatch, getState?: () => GlobalState) => void;
 
 export type ConnectedProps<T> = T & Dispatcher;
-export type ConnectedComponent<S, O = {}> = React.ComponentClass<Omit<S, keyof S> & O>;
+export type ConnectedComponent<S, O = RouteComponentProps<{}>> = React.ComponentClass<Omit<S, keyof S> & O>;
+export type RouteMapper<T, R> = (state: GlobalState, ownProps?: RouteComponentProps<R>) => T;
+
+export function createRouteMapStateToProps<T, R>(mapper: RouteMapper<T, R>): RouteMapper<T, R>{
+  return function(state: GlobalState, ownProps: RouteComponentProps<R>){
+    return mapper(state, ownProps);
+  };
+}
 
 // The main store
 export const history: History = !onServer ? createHistory() : null;
