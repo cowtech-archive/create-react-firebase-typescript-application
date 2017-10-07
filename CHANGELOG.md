@@ -1,3 +1,7 @@
+### 2017-10-07 / 0.12.9
+
+* Updated dependencies.
+
 ### 2017-10-07 / 0.12.8
 
 * Updated dependencies.

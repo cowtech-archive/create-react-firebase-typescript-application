@@ -7,7 +7,7 @@
   "files": ["index.js"],
   "author": "{{author}} <{{authorEmail}}>",
   "dependencies": {
-    "firebase-admin": "~5.2",
-    "firebase-functions": "~0.6"
+    "firebase-admin": "~5.4",
+    "firebase-functions": "~0.7"
   }
 }
