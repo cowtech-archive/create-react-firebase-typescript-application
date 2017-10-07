@@ -3,7 +3,7 @@ declare const WorkboxSW: any;
 declare const importScripts: any;
 
 // Load Workbox
-require('../../node_modules/workbox-sw/build/importScripts/workbox-sw.prod.v2.0.1.js');
+require('../../node_modules/workbox-sw/build/importScripts/workbox-sw.prod.v2.1.0.js');
 importScripts('/js/workbox.js');
 const workbox: any = new WorkboxSW({clientsClaim: true});
 
