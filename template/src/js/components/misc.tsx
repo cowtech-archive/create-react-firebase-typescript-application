@@ -78,7 +78,7 @@ export class TopAnchor extends React.Component{
     return (
       <a id="topAnchor" ref={(el: HTMLAnchorElement) => this.element = el} className={this.bem(null, 'hidden')}
         onClick={this.handleScrollToTop.bind(this)} href="#top" title="Top">
-        <Icon name="chevron-up"/>
+        <Icon name="arrow-up"/>
       </a>
     );
   }

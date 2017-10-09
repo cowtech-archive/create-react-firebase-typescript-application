@@ -17,17 +17,21 @@ import {store, history} from './data/store';
 // Routes
 
 document.addEventListener('DOMContentLoaded', () => {
-  const main: HTMLElement = document.getElementById('main');
-  main.innerHTML = '';
+  const root: HTMLElement = document.getElementById('root');
+  root.innerHTML = '';
 
   ReactDOM.render(
     <Provider store={store}>
       <Router history={history}>
         <div id="main" className="main">
+
+          <TopAnchor/>
+          <BrowseHappy/>
+          <IconsDefinitions/>
         </div>
       </Router>
     </Provider>,
-    main
+    root
   );
 
   // Service workers

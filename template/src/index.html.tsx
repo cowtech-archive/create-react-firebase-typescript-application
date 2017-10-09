@@ -6,15 +6,13 @@ require('./robots.txt');
 
 import * as React from 'react';
 import ReactDOMServer from 'react-dom/server';
-import {Provider} from 'react-redux';
-import {StaticRouter as Router} from 'react-router';
 
 import {Environment} from './js/models/environment';
-import {store} from './js/data/store';
 
 declare const env: Environment;
 
-import {IconsDefinitions, BrowseHappy, TopAnchor, Spinner} from './js/components/misc';
+import {IconsDefinitions, BrowseHappy, TopAnchor} from './js/components/misc';
+import {LoadingRoute} from './js/routes/loading-route';
 
 const structuredData: any = {
 
@@ -61,18 +59,14 @@ const index: string = ReactDOMServer.renderToStaticMarkup(
     </head>
     <body>
       <div id="root" className="root">
-        <Provider store={store}>
-          <Router location={'/'} context={{}}>
-              <div id="main" className="main">
-                <Spinner/>
-              </div>
-          </Router>
-        </Provider>
-      </div>
+        <div id="main" className="main">
+          <LoadingRoute/>
+        </div>
 
-      <TopAnchor/>
-      <BrowseHappy/>
-      <IconsDefinitions/>
+        <TopAnchor/>
+        <BrowseHappy/>
+        <IconsDefinitions/>
+      </div>
     </body>
   </html>
 );

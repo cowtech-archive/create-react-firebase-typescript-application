@@ -25,6 +25,7 @@
     "firebase-admin": "~5.4",
     "firebase-functions": "~0.7",
     "lazier.sass": "~4.4",
+    "prop-types": "~15.6",
     "react": "~16.0",
     "react-bem-helper": "~1.4",
     "react-dom": "~16.0",
