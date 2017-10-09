@@ -1,3 +1,7 @@
+### 2017-10-09 / 0.13.1
+
+* Added missing file.
+
 ### 2017-10-09 / 0.13.0
 
 * Improvements.
