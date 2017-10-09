@@ -1,3 +1,7 @@
+### 2017-10-09 / 0.13.2
+
+* robots.txt fix.
+
 ### 2017-10-09 / 0.13.1
 
 * Added missing file.
