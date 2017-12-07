@@ -1,5 +1,6 @@
 import * as React from 'react';
 
+import {Environment} from '../models/environment';
 import {BEM, BEMClass, BoundHandler} from '../utils/dom-utils';
 
 interface Icons{
@@ -14,6 +15,7 @@ interface IconProps{
 }
 
 declare const ICONS: Icons;
+declare const env: Environment;
 
 export class Emoji extends React.Component<{code: string}>{
   render(): JSX.Element{
@@ -126,6 +128,44 @@ export class TopAnchor extends React.Component{
     };
 
     animate();
+  }
+}
+
+export class NewVersionChecker extends React.Component<{messageText?: string, upgradeText?: string}, {newVersionAvailable: boolean}>{
+  constructor(props: {messageText?: string, upgradeText?: string}){
+    super(props);
+
+    this.state = {newVersionAvailable: false};
+  }
+
+  render(): JSX.Element{
+    if(!this.state.newVersionAvailable)
+      return null;
+
+    const messageText: string = this.props.messageText || 'There is a shiny new version.';
+    const upgradeText: string = this.props.upgradeText || 'Update now!';
+
+    return (
+      <div id="newVersionChecker" className="NewVersionChecker">
+        <span>{messageText}&nbsp;</span>
+        <a href="#" onClick={this.handleClick.bind(this)} className="NewVersionChecker__link">{upgradeText}</a>
+      </div>
+    );
+  }
+
+  async componentDidMount(): Promise<void>{
+    try{
+      // No new workers or SW available, use the manifest
+      const manifest: {version: string} = await (await fetch('/manifest.json', {cache: 'no-store', headers: [['Cache-Control', 'no-cache']]})).json();
+
+      this.setState(() => ({newVersionAvailable: env.version !== manifest.version}));
+    }catch(e){ // Ignore errors here
+    }
+  }
+
+  async handleClick(ev: React.MouseEvent<HTMLElement>): Promise<void>{
+    ev.preventDefault();
+    location.reload(true);
   }
 }
 

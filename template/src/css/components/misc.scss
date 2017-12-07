@@ -65,6 +65,29 @@ $spinnerDuration: 2s;
   }
 }
 
+.NewVersionChecker{
+  background-color: map-get($palette, blue-500);
+  color: white;
+  z-index: 100;
+  text-align: center;
+  position: fixed;
+  bottom: 0;
+
+  &__link{
+    font-weight: bold;
+
+    &, &:hover, &:active, &:focus{
+      color: map-get($palette, amber-200);
+    }
+
+    @media(hover){
+      &:hover{
+        color: map-get($palette, amber-500);
+      }
+    }
+  }
+}
+
 .Spinner{
   align-self: center;
   justify-self: center;

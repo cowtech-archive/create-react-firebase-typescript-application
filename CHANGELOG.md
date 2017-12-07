@@ -1,3 +1,7 @@
+### 2017-12-07 / 0.14.0
+
+* Updated dependencies and ServiceWorkers handling.
+
 ### 2017-10-09 / 0.13.2
 
 * robots.txt fix.
