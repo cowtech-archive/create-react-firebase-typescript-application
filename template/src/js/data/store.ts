@@ -61,6 +61,5 @@ export const store: Store<GlobalState> = createStore(
 );
 
 // Initialize Firebase
-if(!onServer){
+if(!onServer)
   firebase.initializeApp(env.firebase);
-}

@@ -1,3 +1,7 @@
+### 2017-12-07 / 0.14.1
+
+* Bugfix.
+
 ### 2017-12-07 / 0.14.0
 
 * Updated dependencies and ServiceWorkers handling.
