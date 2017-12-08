@@ -28,11 +28,8 @@ document.addEventListener('DOMContentLoaded', () => {
     <Provider store={store}>
       <Router history={history}>
         <div id="main" className="main">
-
-          <TopAnchor/>
           {legacyBrowser && <BrowseHappy/>}
           <NewVersionChecker/>
-          <IconsDefinitions/>
         </div>
       </Router>
     </Provider>,

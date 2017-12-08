@@ -11,7 +11,7 @@ import {Environment} from './js/models/environment';
 
 declare const env: Environment;
 
-import {IconsDefinitions, BrowseHappy, TopAnchor} from './js/components/misc';
+import {IconsDefinitions, TopAnchor} from './js/components/misc';
 import {LoadingRoute} from './js/routes/loading-route';
 
 const structuredData: any = {
@@ -58,15 +58,15 @@ const index: string = ReactDOMServer.renderToStaticMarkup(
       <meta name="twitter:image" content=""/>
     </head>
     <body>
+      <IconsDefinitions/>
+
       <div id="root" className="root">
         <div id="main" className="main">
           <LoadingRoute/>
         </div>
-
-        <TopAnchor/>
-        <BrowseHappy/>
-        <IconsDefinitions/>
       </div>
+
+      <TopAnchor/>
     </body>
   </html>
 );
