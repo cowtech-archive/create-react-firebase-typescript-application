@@ -70,8 +70,10 @@ $spinnerDuration: 2s;
   color: white;
   z-index: 100;
   text-align: center;
+  padding: 1rem;
   position: fixed;
-  bottom: 0;
+  top: 0;
+  width: 100%;
 
   &__link{
     font-weight: bold;

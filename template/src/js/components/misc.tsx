@@ -131,8 +131,8 @@ export class TopAnchor extends React.Component{
   }
 }
 
-export class NewVersionChecker extends React.Component<{messageText?: string, upgradeText?: string}, {newVersionAvailable: boolean}>{
-  constructor(props: {messageText?: string, upgradeText?: string}){
+export class NewVersionChecker extends React.Component<{message?: string, action?: string}, {newVersionAvailable: boolean}>{
+  constructor(props: {message?: string, action?: string}){
     super(props);
 
     this.state = {newVersionAvailable: false};
@@ -142,13 +142,13 @@ export class NewVersionChecker extends React.Component<{messageText?: string, up
     if(!this.state.newVersionAvailable)
       return null;
 
-    const messageText: string = this.props.messageText || 'There is a shiny new version.';
-    const upgradeText: string = this.props.upgradeText || 'Update now!';
+    const message: string = this.props.message || 'There is a shiny new version.';
+    const action: string = this.props.action || 'Update now!';
 
     return (
       <div id="newVersionChecker" className="NewVersionChecker">
-        <span>{messageText}&nbsp;</span>
-        <a href="#" onClick={this.handleClick.bind(this)} className="NewVersionChecker__link">{upgradeText}</a>
+        <span>{message}&nbsp;</span>
+        <a href="#" onClick={this.handleClick.bind(this)} className="NewVersionChecker__link">{action}</a>
       </div>
     );
   }
