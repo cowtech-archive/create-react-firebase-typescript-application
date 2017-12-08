@@ -1,3 +1,7 @@
+### 2017-12-08 / 0.14.4
+
+* Add explicit dependencies.
+
 ### 2017-12-08 / 0.14.3
 
 * Minor improvements.
