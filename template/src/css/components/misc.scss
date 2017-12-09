@@ -30,12 +30,6 @@ $top-anchor-foreground-color: map-get($palette, white);
   text-align: center;
   z-index: 100;
 
-  &--hidden{
-    &, &:hover{
-      opacity: 0;
-    }
-  }
-
   &__link{
     color: map-get($palette, white);
     font-weight: bold;
@@ -43,25 +37,6 @@ $top-anchor-foreground-color: map-get($palette, white);
     &:hover{
       color: map-get($palette, amber-500);
     }
-  }
-}
-
-/* Adapted from here: https://tech.scrunch.com/blog/creating-an-animated-svg-spinner/ */
-$spinnerSize: 66;
-$spinnerDuration: 2s;
-
-@keyframes spinner {
-  0%{
-    stroke-dashoffset: (0.66 * $spinnerSize);
-    transform: rotate(0deg);
-  }
-  50%{
-    stroke-dashoffset: (3.14 * $spinnerSize);
-    transform: rotate(720deg);
-  }
-  100%{
-    stroke-dashoffset: (0.66 * $spinnerSize);
-    transform: rotate(1080deg);
   }
 }
 
@@ -87,6 +62,25 @@ $spinnerDuration: 2s;
         color: map-get($palette, amber-500);
       }
     }
+  }
+}
+
+/* Adapted from here: https://tech.scrunch.com/blog/creating-an-animated-svg-spinner/ */
+$spinnerSize: 66;
+$spinnerDuration: 2s;
+
+@keyframes spinner {
+  0%{
+    stroke-dashoffset: (0.66 * $spinnerSize);
+    transform: rotate(0deg);
+  }
+  50%{
+    stroke-dashoffset: (3.14 * $spinnerSize);
+    transform: rotate(720deg);
+  }
+  100%{
+    stroke-dashoffset: (0.66 * $spinnerSize);
+    transform: rotate(1080deg);
   }
 }
 

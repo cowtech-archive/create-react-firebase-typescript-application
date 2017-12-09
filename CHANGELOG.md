@@ -1,3 +1,7 @@
+### 2017-12-09 / 0.14.5
+
+* Fixed BrowseHappy.
+
 ### 2017-12-08 / 0.14.4
 
 * Add explicit dependencies.

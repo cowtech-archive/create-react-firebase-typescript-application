@@ -55,7 +55,7 @@ export class IconsDefinitions extends React.Component{
 
 export function BrowseHappy(): JSX.Element{
   return (
-    <div id="browseHappy" className="BrowseHappy BrowseHappy--hidden">
+    <div id="browseHappy" className="BrowseHappy">
       <span>Your browser is obsolete. For the best browsing experience, update it for free by visiting&nbsp;</span>
       <a href="https://browsehappy.com/" className="BrowseHappy__link" target="_blank" rel="noopener">BrowseHappy</a>.
     </div>
