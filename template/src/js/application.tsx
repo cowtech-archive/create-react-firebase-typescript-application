@@ -13,6 +13,7 @@ import {ConnectedRouter as Router} from 'react-router-redux';
 import {Provider} from 'react-redux';
 
 import {store, history} from './data/store';
+import {TopAnchor} from './components/misc';
 
 import {handleIOSMinHeight} from './utils/dom-utils';
 
@@ -28,6 +29,7 @@ document.addEventListener('DOMContentLoaded', () => {
     <Provider store={store}>
       <Router history={history}>
         <div id="main" className="main">
+          <TopAnchor/>
           {legacyBrowser && <BrowseHappy/>}
           <NewVersionChecker/>
         </div>

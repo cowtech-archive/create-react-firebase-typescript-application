@@ -1,3 +1,7 @@
+### 2017-12-10 / 0.14.6
+
+* Fixed TopAnchor placement.
+
 ### 2017-12-09 / 0.14.5
 
 * Fixed BrowseHappy.

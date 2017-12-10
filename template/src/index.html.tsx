@@ -11,7 +11,7 @@ import {Environment} from './js/models/environment';
 
 declare const env: Environment;
 
-import {IconsDefinitions, TopAnchor} from './js/components/misc';
+import {IconsDefinitions} from './js/components/misc';
 import {LoadingRoute} from './js/routes/loading-route';
 
 const structuredData: any = {
@@ -65,8 +65,6 @@ const index: string = ReactDOMServer.renderToStaticMarkup(
           <LoadingRoute/>
         </div>
       </div>
-
-      <TopAnchor/>
     </body>
   </html>
 );
