@@ -9,7 +9,7 @@
     "public": "dist",
     "rewrites": [
       {
-        "source": "!(**/*.@(jpg|jpeg|gif|png|svg|js|appcache))",
+        "source": "!(**/*.@(jpg|jpeg|gif|png|svg|js|json|appcache))",
         "destination": "/index.html"
       }
     ],

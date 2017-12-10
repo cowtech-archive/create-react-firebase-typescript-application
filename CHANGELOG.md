@@ -1,3 +1,7 @@
+### 2017-12-10 / 0.14.7
+
+* Minor fix.
+
 ### 2017-12-10 / 0.14.6
 
 * Fixed TopAnchor placement.
