@@ -1,6 +1,6 @@
 {
   "name": "@cowtech/create-react-firebase-typescript-application",
-  "version": "0.14.8",
+  "version": "0.15.0",
   "description": "CowTech Template: React and Firebase TypeScript application",
   "main": "index.js",
   "files": [
