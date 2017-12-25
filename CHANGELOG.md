@@ -1,3 +1,7 @@
+### 2017-12-25 / 0.15.0
+
+* Switch to webpack-config-lite.
+
 ### 2017-12-10 / 0.14.8
 
 * Minor fix.

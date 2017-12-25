@@ -1,23 +1,17 @@
+import * as React from 'react';
+
+import {BrowseHappy} from '@cowtech/react-lazily/components/browse-happy';
+import {NewVersionChecker} from '@cowtech/react-lazily/components/new-version-checker';
+import {TopAnchor} from '@cowtech/react-lazily/components/top-anchor';
+import {handleIOSMinHeight} from '@cowtech/react-lazily/utils/dom-utils';
+import ReactDOM from 'react-dom';
+import {Provider} from 'react-redux';
+import {ConnectedRouter as Router} from 'react-router-redux';
+
+import {store, history} from './data/store';
 import {Environment} from './models/environment';
 
 declare const env: Environment;
-
-// Import assets
-import '../css/main.scss';
-
-// Imports
-import * as React from 'react';
-import ReactDOM from 'react-dom';
-import {Route, Switch} from 'react-router-dom';
-import {ConnectedRouter as Router} from 'react-router-redux';
-import {Provider} from 'react-redux';
-
-import {store, history} from './data/store';
-import {TopAnchor} from './components/misc';
-
-import {handleIOSMinHeight} from './utils/dom-utils';
-
-// Routes
 
 document.addEventListener('DOMContentLoaded', () => {
   const legacyBrowser: boolean =

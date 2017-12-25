@@ -1,17 +1,18 @@
-const onServer: boolean = typeof window === 'undefined'; // tslint:disable-line strict-type-predicates
-
 import * as React from 'react';
-import {createStore, applyMiddleware, compose, combineReducers, Store} from 'redux';
+
+import * as firebase from 'firebase';
 import {History} from 'history';
 import createHistory from 'history/createBrowserHistory';
 import {RouteComponentProps} from 'react-router';
 import {routerReducer, routerMiddleware, RouterAction} from 'react-router-redux';
+import {createStore, applyMiddleware, compose, combineReducers, Store} from 'redux';
 import thunk from 'redux-thunk';
-import * as firebase from 'firebase';
 
-import {Environment} from '../models/environment';
 import {GlobalState} from '../data/state';
+import {Environment} from '../models/environment';
 import {reducer} from './reducers';
+
+const onServer: boolean = typeof window === 'undefined'; // tslint:disable-line strict-type-predicates
 
 interface ExtendedWindow extends Window{
   __REDUX_DEVTOOLS_EXTENSION_COMPOSE__?: any;

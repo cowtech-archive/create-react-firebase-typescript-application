@@ -1,22 +1,35 @@
 // tslint:disable jsx-self-close jsx-boolean-value
 
-require('./images/favicon.png');
+require('@cowtech/react-lazily/images/favicon.png');
+require('@cowtech/react-lazily/images/cowtech.png');
 require('./manifest.json');
 require('./robots.txt');
 
 import * as React from 'react';
+
+import {IconsDefinitions} from '@cowtech/react-lazily/components/icons';
 import ReactDOMServer from 'react-dom/server';
 
 import {Environment} from './js/models/environment';
+import {LoadingRoute} from './js/routes/loading-route';
 
 declare const env: Environment;
-
-import {IconsDefinitions} from './js/components/misc';
-import {LoadingRoute} from './js/routes/loading-route';
 
 const structuredData: any = {
 
 };
+
+const html: string = ReactDOMServer.renderToStaticMarkup(
+  <React.Fragment>
+    <IconsDefinitions/>
+
+    <div id="root" className="root">
+      <div id="main" className="main">
+        <LoadingRoute/>
+      </div>
+    </div>
+  </React.Fragment>
+);
 
 const index: string = ReactDOMServer.renderToStaticMarkup(
   <html lang="en">
@@ -34,9 +47,9 @@ const index: string = ReactDOMServer.renderToStaticMarkup(
       <link rel="shortcut icon" href="images/favicon.png" sizes="196x196"/>
       <link rel="manifest" href="/manifest.json"/>
 
-      {env.environment === 'production' && <style dangerouslySetInnerHTML={{__html: require('./css/main.scss').toString()}}/>}
+      <style dangerouslySetInnerHTML={{__html: getStyles()}} />
       <script defer={true} type="text/javascript" src="https://www.gstatic.com/firebasejs/4.5.0/firebase-app.js"></script>
-      {env.environment === 'development' && <script defer={true} type="text/javascript" src="/webpack-bootstrap.js"></script>}
+      {env.environment === 'development' && <script defer={true} type="text/javascript" src="webpack-bootstrap.js"></script>}
       <script defer={true} type="text/javascript" src="/js/app.js"></script>
 
       <script type="application/ld+json" dangerouslySetInnerHTML={{__html: JSON.stringify(structuredData)}}/>
@@ -57,15 +70,7 @@ const index: string = ReactDOMServer.renderToStaticMarkup(
       <meta name="twitter:description" content={env.description}/>
       <meta name="twitter:image" content=""/>
     </head>
-    <body>
-      <IconsDefinitions/>
-
-      <div id="root" className="root">
-        <div id="main" className="main">
-          <LoadingRoute/>
-        </div>
-      </div>
-    </body>
+    <body dangerouslySetInnerHTML={{__html: html}} />
   </html>
 );
 
