@@ -8,6 +8,8 @@ require('./robots.txt');
 import * as React from 'react';
 
 import {IconsDefinitions} from '@cowtech/react-lazily/components/icons';
+import {Spinner} from '@cowtech/react-lazily/components/spinner';
+import {colorGrey500} from '@cowtech/react-lazily/styling/colors';
 import ReactDOMServer from 'react-dom/server';
 
 import {Environment} from './js/models/environment';
@@ -25,7 +27,7 @@ const html: string = ReactDOMServer.renderToStaticMarkup(
 
     <div id="root" className="root">
       <div id="main" className="main">
-        <LoadingRoute/>
+      <Spinner color={colorGrey500}/>
       </div>
     </div>
   </React.Fragment>

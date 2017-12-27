@@ -25,7 +25,7 @@ document.addEventListener('DOMContentLoaded', () => {
         <div id="main" className="main">
           <TopAnchor/>
           {legacyBrowser && <BrowseHappy/>}
-          <NewVersionChecker/>
+          <NewVersionChecker currentVersion={env.version}/>
         </div>
       </Router>
     </Provider>,

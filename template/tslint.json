@@ -1,3 +1,6 @@
 {
-  "extends": ["tslint-react", "@cowtech/tslint-config/react"]
+  "extends": ["tslint-react", "@cowtech/tslint-config/react"],
+  "rules": {
+    "no-magic-numbers": false
+  }
 }

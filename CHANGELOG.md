@@ -1,3 +1,7 @@
+### 2017-12-27 / 0.15.1
+
+* Improved typestyle usage.
+
 ### 2017-12-25 / 0.15.0
 
 * Switch to webpack-config-lite.
