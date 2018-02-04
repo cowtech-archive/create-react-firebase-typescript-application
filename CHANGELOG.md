@@ -1,3 +1,8 @@
+### 2018-02-04 / 0.15.2
+
+* Updated license.
+* Improved typestyle usage.
+
 ### 2017-12-27 / 0.15.1
 
 * Improved typestyle usage.
