@@ -1,6 +1,7 @@
 import * as functions from 'firebase-functions';
 
 import {S_TO_MS, US_TO_MS} from '../../models/constants';
+import {Environment} from './environment';
 
 interface CustomErrorBase{
   code: number;
@@ -10,6 +11,8 @@ interface CustomErrorBase{
 interface CustomError extends CustomErrorBase{
   gatewayError?: CustomErrorBase;
 }
+
+declare const env: Environment;
 
 export interface ExtendedResponse extends functions.Response{
   startTime?: [number, number];
@@ -26,6 +29,7 @@ export function getDuration(time: [number, number]): string{
 }
 
 export function sendResponse(res: ExtendedResponse, code: number, content?: string | object): void{
+  res.set('Cowtech-Version', env.version);
   res.set('X-Response-Time', `${getDuration(res.startTime)} ms`);
 
   res.status(code);

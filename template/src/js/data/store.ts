@@ -16,6 +16,7 @@ const onServer: boolean = typeof window === 'undefined'; // tslint:disable-line 
 
 interface ExtendedWindow extends Window{
   __REDUX_DEVTOOLS_EXTENSION_COMPOSE__?: any;
+  process: {env: any};
   showEnvironment(): void;
 }
 
@@ -27,8 +28,10 @@ declare const env: Environment;
 let composeEnhancers = compose;
 
 if(!onServer){
-  composeEnhancers = (window as ExtendedWindow).__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
-  (window as ExtendedWindow).showEnvironment = () => console.log(env);
+  const extendedWindow: ExtendedWindow = window as ExtendedWindow;
+  composeEnhancers = extendedWindow.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
+  extendedWindow.showEnvironment = () => console.log(env);
+  extendedWindow.process = {env: process.env};
 }
 
 export type Dispatch = (action: Action | AsyncAction | RouterAction) => Action;

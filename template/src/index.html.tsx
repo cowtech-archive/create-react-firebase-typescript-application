@@ -10,10 +10,12 @@ import * as React from 'react';
 import {IconsDefinitions} from '@cowtech/react-lazily/components/icons';
 import {Spinner} from '@cowtech/react-lazily/components/spinner';
 import {colorGrey500} from '@cowtech/react-lazily/styling/colors';
+import {viewHeight} from 'csx';
 import ReactDOMServer from 'react-dom/server';
+import {style, getStyles, debugName} from 'typestyle';
 
 import {Environment} from './js/models/environment';
-import {LoadingRoute} from './js/routes/loading-route';
+import {mainClassName} from './js/styling/environment';
 
 declare const env: Environment;
 
@@ -21,13 +23,21 @@ const structuredData: any = {
 
 };
 
-const html: string = ReactDOMServer.renderToStaticMarkup(
+const rootClassName: string = style(
+  debugName('root'),
+  {
+    display: 'flex',
+    minHeight: viewHeight(100)
+  }
+);
+
+const body: string = ReactDOMServer.renderToStaticMarkup(
   <React.Fragment>
     <IconsDefinitions/>
 
-    <div id="root" className="root">
-      <div id="main" className="main">
-      <Spinner color={colorGrey500}/>
+    <div id="root" className={rootClassName}>
+      <div id="main" className={mainClassName}>
+        <Spinner color={colorGrey500}/>
       </div>
     </div>
   </React.Fragment>
@@ -72,7 +82,7 @@ const index: string = ReactDOMServer.renderToStaticMarkup(
       <meta name="twitter:description" content={env.description}/>
       <meta name="twitter:image" content=""/>
     </head>
-    <body dangerouslySetInnerHTML={{__html: html}} />
+    <body dangerouslySetInnerHTML={{__html: body}} />
   </html>
 );
 

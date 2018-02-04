@@ -10,6 +10,7 @@ import {ConnectedRouter as Router} from 'react-router-redux';
 
 import {store, history} from './data/store';
 import {Environment} from './models/environment';
+import {mainClassName} from './styling/environment';
 
 declare const env: Environment;
 
@@ -22,7 +23,7 @@ document.addEventListener('DOMContentLoaded', () => {
   ReactDOM.render(
     <Provider store={store}>
       <Router history={history}>
-        <div id="main" className="main">
+        <div id="main" className={mainClassName}>
           <TopAnchor/>
           {legacyBrowser && <BrowseHappy/>}
           <NewVersionChecker currentVersion={env.version}/>

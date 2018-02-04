@@ -1,5 +1,6 @@
 export interface Environment{
   environment: string;
+  version: string;
   backgrounds: number;
   serviceWorkerEnabled: boolean;
   title: string;
