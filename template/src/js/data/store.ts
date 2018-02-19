@@ -12,7 +12,7 @@ import {GlobalState} from '../data/state';
 import {Environment} from '../models/environment';
 import {reducer} from './reducers';
 
-const onServer: boolean = typeof window === 'undefined'; // tslint:disable-line strict-type-predicates
+const onServer = typeof window === 'undefined'; // tslint:disable-line strict-type-predicates
 
 interface ExtendedWindow extends Window{
   __REDUX_DEVTOOLS_EXTENSION_COMPOSE__?: any;
@@ -58,8 +58,8 @@ export function createRouteMapStateToProps<T, R>(mapper: RouteMapper<T, R>): Rou
 }
 
 // The main store
-export const history: History = !onServer ? createHistory() : null;
-export const store: Store<GlobalState> = createStore(
+export const history = !onServer ? createHistory() : null;
+export const store = createStore(
   combineReducers({application: reducer, router: routerReducer}),
   composeEnhancers(applyMiddleware(routerMiddleware(history), thunk))
 );

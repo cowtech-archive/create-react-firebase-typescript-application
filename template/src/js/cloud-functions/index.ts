@@ -5,6 +5,6 @@ import {ExtendedResponse, Statuses, sendResponse} from './modules/http';
 
 declare const env: Environment;
 
-exports.main = functions.https.onRequest(async (req: functions.Request, res: ExtendedResponse) => {
+exports.main = functions.https.onRequest(async (req, res: ExtendedResponse) => {
   return sendResponse(res, Statuses.OK, req.query);
 });

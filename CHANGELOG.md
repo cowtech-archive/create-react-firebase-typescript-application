@@ -1,3 +1,7 @@
+### 2018-02-19 / 0.15.3
+
+* Simplified code.
+
 ### 2018-02-04 / 0.15.2
 
 * Updated license.

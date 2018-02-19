@@ -5,7 +5,7 @@ declare const importScripts: any;
 // Load Workbox
 require('../../node_modules/workbox-sw/build/importScripts/workbox-sw.prod.v2.1.2.js');
 importScripts('/js/workbox.js');
-const workbox: any = new WorkboxSW({clientsClaim: true, skipWaiting: true, directoryIndex: '/index.html'});
+const workbox = new WorkboxSW({clientsClaim: true, skipWaiting: true, directoryIndex: '/index.html'});
 
 // Cache Google Fonts
 workbox.router.registerRoute(

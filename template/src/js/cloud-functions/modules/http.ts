@@ -18,7 +18,7 @@ export interface ExtendedResponse extends functions.Response{
   startTime?: [number, number];
 }
 
-export const Statuses: {[key: string]: number} = {
+export const Statuses = {
   OK: 200, NO_CONTENT: 204, FORBIDDEN: 403, SERVER_ERROR: 500, GATEWAY_ERROR: 502
 };
 

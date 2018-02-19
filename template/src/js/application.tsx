@@ -15,9 +15,9 @@ import {mainClassName} from './styling/environment';
 declare const env: Environment;
 
 document.addEventListener('DOMContentLoaded', () => {
-  const legacyBrowser: boolean =
+  const legacyBrowser =
     navigator.userAgent.indexOf('MSIE') !== -1 || typeof CSS.supports !== 'function' || !CSS.supports('display', 'grid') || !CSS.supports('display', 'flex');
-  const root: HTMLElement = document.getElementById('root');
+  const root = document.getElementById('root');
   root.innerHTML = '';
 
   ReactDOM.render(
@@ -39,7 +39,7 @@ document.addEventListener('DOMContentLoaded', () => {
       navigator.serviceWorker.register('/sw.js').catch(console.error);
     else{
       navigator.serviceWorker.getRegistrations()
-        .then((rs: Array<ServiceWorkerRegistration>) => rs.map((r: ServiceWorkerRegistration) => r.unregister()))
+        .then(rs => rs.map(r => r.unregister()))
         .catch(console.error);
     }
   }

@@ -19,11 +19,11 @@ import {mainClassName} from './js/styling/environment';
 
 declare const env: Environment;
 
-const structuredData: any = {
+const structuredData = {
 
 };
 
-const rootClassName: string = style(
+const rootClassName = style(
   debugName('root'),
   {
     display: 'flex',
@@ -31,7 +31,7 @@ const rootClassName: string = style(
   }
 );
 
-const body: string = ReactDOMServer.renderToStaticMarkup(
+const body = ReactDOMServer.renderToStaticMarkup(
   <React.Fragment>
     <IconsDefinitions/>
 
@@ -43,7 +43,7 @@ const body: string = ReactDOMServer.renderToStaticMarkup(
   </React.Fragment>
 );
 
-const index: string = ReactDOMServer.renderToStaticMarkup(
+const index = ReactDOMServer.renderToStaticMarkup(
   <html lang="en">
     <head>
       <title>{env.title}</title>
