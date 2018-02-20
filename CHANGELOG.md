@@ -1,3 +1,7 @@
+### 2018-02-20 / 0.15.4
+
+* Updated dependencies.
+
 ### 2018-02-19 / 0.15.3
 
 * Simplified code.

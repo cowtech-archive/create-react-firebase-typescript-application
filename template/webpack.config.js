@@ -6,7 +6,6 @@ module.exports = function(env){
     entries: {'js/app.js': './src/js/application.tsx'},
     indexFile: 'src/index.html.tsx',
     transpilers: ['typescript', 'react'],
-    distFolder: 'dist',
     externals: [{firebase: 'firebase'}],
     icons: ['arrow-up@chevron-up', 'copy', 'copyright', 'email@envelope', 'favorite@heart'],
     iconsLoader: {loader}
