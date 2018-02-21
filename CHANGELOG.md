@@ -1,3 +1,7 @@
+### 2018-02-21 / 0.15.5
+
+* Updated service worker.
+
 ### 2018-02-20 / 0.15.4
 
 * Updated dependencies.
