@@ -1,3 +1,7 @@
+### 2018-03-11 / 0.15.11
+
+* Updated linting.
+
 ### 2018-03-11 / 0.15.10
 
 * Updated linting.
