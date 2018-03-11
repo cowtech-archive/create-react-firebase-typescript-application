@@ -3,15 +3,15 @@
 
 
 "@cowtech/create-base@~0.1":
-  version "0.1.5"
-  resolved "https://registry.yarnpkg.com/@cowtech/create-base/-/create-base-0.1.5.tgz#6dbf97cfb220b3366b8cb46bb293b894149e1a23"
+  version "0.1.6"
+  resolved "https://registry.yarnpkg.com/@cowtech/create-base/-/create-base-0.1.6.tgz#8ecf10f983fef7143bfc6500ff903dd2a799396c"
   dependencies:
     find "~0.2"
     fs-extra "~4.0"
 
-"@cowtech/eslint-config@~4.18":
-  version "4.18.0"
-  resolved "https://registry.yarnpkg.com/@cowtech/eslint-config/-/eslint-config-4.18.0.tgz#5e01868ff882e1b6fe56256e6b55ccd8852b6cb1"
+"@cowtech/eslint-config@~4.15":
+  version "4.15.1"
+  resolved "https://registry.yarnpkg.com/@cowtech/eslint-config/-/eslint-config-4.15.1.tgz#d836f27cc5dc932a7f93e71c3176e491757d949a"
   dependencies:
     eslint "~4.18"
 
