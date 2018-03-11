@@ -1,4 +1,4 @@
-const {setup} = require('@cowtech/webpack-config');
+const {setup} = require('@cowtech/webpack-config-lite');
 const {loader} = require('@cowtech/webpack-config-icons-font-awesome');
 
 module.exports = function(env){
@@ -7,7 +7,10 @@ module.exports = function(env){
     indexFile: 'src/index.html.tsx',
     transpilers: ['typescript', 'react'],
     externals: [{firebase: 'firebase'}],
-    icons: ['arrow-up@chevron-up', 'copy', 'copyright', 'email@envelope', 'favorite@heart'],
-    iconsLoader: {loader}
+    icons: ['arrow-up@chevron-up', 'copyright', 'email@envelope', 'favorite@heart'],
+    iconsLoader: {loader},
+    server: {
+      https: true
+    }
   });
 };

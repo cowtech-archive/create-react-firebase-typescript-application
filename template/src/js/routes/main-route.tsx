@@ -21,4 +21,4 @@ export class MainRouteComponent extends React.Component<ConnectedProps<MainRoute
   }
 }
 
-export const MainRoute = connect(mapStateToProps, null)(MainRouteComponent);
+export const MainRoute: ConnectedComponent<MainRouteProps> = connect(mapStateToProps, null)(MainRouteComponent);

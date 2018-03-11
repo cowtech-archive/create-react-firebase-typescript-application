@@ -1,7 +1,6 @@
 import * as React from 'react';
 
 import * as firebase from 'firebase';
-import {History} from 'history';
 import createHistory from 'history/createBrowserHistory';
 import {RouteComponentProps} from 'react-router';
 import {routerReducer, routerMiddleware, RouterAction} from 'react-router-redux';
@@ -24,7 +23,7 @@ type Omit<T, K extends keyof T> = Pick<T, Diff<keyof T, K>>;
 
 declare const env: Environment;
 
-const extendedWindow: ExtendedWindow = window as ExtendedWindow;
+const extendedWindow = window as ExtendedWindow;
 const composeEnhancers = extendedWindow.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 extendedWindow.showEnvironment = () => console.log(env);
 extendedWindow.process = {env: process.env};
@@ -54,7 +53,7 @@ export function createRouteMapStateToProps<T, R>(mapper: RouteMapper<T, R>): Rou
 
 // The main store
 export const history = createHistory();
-export const store = createStore(
+export const store: Store<GlobalState> = createStore(
   combineReducers({application: reducer, router: routerReducer}),
   composeEnhancers(applyMiddleware(routerMiddleware(history), thunk))
 );

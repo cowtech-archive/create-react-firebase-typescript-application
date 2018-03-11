@@ -1,9 +1,6 @@
 import * as React from 'react';
 
-import {BrowseHappy} from '@cowtech/react-lazily/components/browse-happy';
-import {NewVersionChecker} from '@cowtech/react-lazily/components/new-version-checker';
-import {TopAnchor} from '@cowtech/react-lazily/components/top-anchor';
-import {handleIOSMinHeight} from '@cowtech/react-lazily/utils/dom-utils';
+import {BrowseHappy, isModernBrowser, NewVersionChecker, TopAnchor, handleIOSMinHeight} from '@cowtech/react-lazily';
 import ReactDOM from 'react-dom';
 import {Provider} from 'react-redux';
 import {ConnectedRouter as Router} from 'react-router-redux';
@@ -15,8 +12,6 @@ import {mainClassName} from './styling/environment';
 declare const env: Environment;
 
 document.addEventListener('DOMContentLoaded', () => {
-  const legacyBrowser =
-    navigator.userAgent.indexOf('MSIE') !== -1 || typeof CSS.supports !== 'function' || !CSS.supports('display', 'grid') || !CSS.supports('display', 'flex');
   const root = document.getElementById('root');
   root.innerHTML = '';
 
@@ -25,7 +20,7 @@ document.addEventListener('DOMContentLoaded', () => {
       <Router history={history}>
         <div id="main" className={mainClassName}>
           <TopAnchor/>
-          {legacyBrowser && <BrowseHappy/>}
+          {!isModernBrowser() && <BrowseHappy/>}
           <NewVersionChecker currentVersion={env.version}/>
         </div>
       </Router>

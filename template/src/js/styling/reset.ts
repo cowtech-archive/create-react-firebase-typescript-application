@@ -1,11 +1,10 @@
-import {systemFontsStack} from '@cowtech/react-lazily/styling/fonts';
-import {reset} from '@cowtech/react-lazily/styling/reset';
+import {resetStyles} from '@cowtech/react-lazily';
 import {viewHeight} from 'csx';
 import {cssRule as global, fontFace} from 'typestyle';
 
-import {fontSize, linkColor, linkHighlightColor} from './environment';
+import {fontSize, linkColor, linkHighlightColor, mainFontFamily} from './environment';
 
-reset();
+resetStyles();
 
 fontFace({
   fontFamily: 'Lato',
@@ -29,12 +28,12 @@ global('body', {
   minHeight: viewHeight(100),
 });
 
-global('body, a, p, strong, em, li, dd, dt, button, input, select, textarea', {fontFamily: `Lato, ${systemFontsStack}`});
-
 global('h1, h2, h3, h4, h5, h6', {
-  fontFamily: `Lato, ${systemFontsStack}`,
+  fontFamily: mainFontFamily,
   fontWeight: 400
 });
+
+global('body', {fontFamily: mainFontFamily});
 
 global('a, a:focus, a:active', {color: linkColor});
 global('a:hover', {color: linkHighlightColor});

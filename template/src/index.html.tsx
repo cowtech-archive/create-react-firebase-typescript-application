@@ -7,15 +7,13 @@ require('./robots.txt');
 
 import * as React from 'react';
 
-import {IconsDefinitions} from '@cowtech/react-lazily/components/icons';
-import {Spinner} from '@cowtech/react-lazily/components/spinner';
-import {colorGrey500} from '@cowtech/react-lazily/styling/colors';
-import {viewHeight} from 'csx';
+import {Spinner, IconsDefinitions, debugClassName} from '@cowtech/react-lazily';
 import ReactDOMServer from 'react-dom/server';
-import {style, getStyles, debugName} from 'typestyle';
+import {style, getStyles} from 'typestyle';
+import {viewHeight} from 'csx';
 
 import {Environment} from './js/models/environment';
-import {mainClassName} from './js/styling/environment';
+import {mainClassName, spinnerColor} from './js/styling/environment';
 
 declare const env: Environment;
 
@@ -24,7 +22,7 @@ const structuredData = {
 };
 
 const rootClassName = style(
-  debugName('root'),
+  debugClassName('root'),
   {
     display: 'flex',
     minHeight: viewHeight(100)
@@ -37,7 +35,7 @@ const body = ReactDOMServer.renderToStaticMarkup(
 
     <div id="root" className={rootClassName}>
       <div id="main" className={mainClassName}>
-        <Spinner color={colorGrey500}/>
+        <Spinner color={spinnerColor}/>
       </div>
     </div>
   </React.Fragment>

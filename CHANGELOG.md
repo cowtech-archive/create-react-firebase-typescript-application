@@ -1,3 +1,7 @@
+### 2018-03-11 / 0.15.12
+
+* Updated template.
+
 ### 2018-03-11 / 0.15.11
 
 * Updated linting.

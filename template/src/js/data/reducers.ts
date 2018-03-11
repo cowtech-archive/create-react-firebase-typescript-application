@@ -2,7 +2,7 @@ import {State} from '../data/state';
 import {Action} from './store';
 
 export function reducer(state: State, {type/*, payload*/}: Action): State{
-  let newState: State = state;
+  let newState = state;
 
   if(typeof newState === 'undefined') // Initial state
     newState = {};
