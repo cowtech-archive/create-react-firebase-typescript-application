@@ -2,9 +2,9 @@
 # yarn lockfile v1
 
 
-"@cowtech/create-base@~0.1":
-  version "0.1.6"
-  resolved "https://registry.yarnpkg.com/@cowtech/create-base/-/create-base-0.1.6.tgz#8ecf10f983fef7143bfc6500ff903dd2a799396c"
+"@cowtech/create-base@~0.2":
+  version "0.2.0"
+  resolved "https://registry.yarnpkg.com/@cowtech/create-base/-/create-base-0.2.0.tgz#6fc2324a9557e54f87dd40df626e31cb272bac80"
   dependencies:
     find "~0.2"
     fs-extra "~4.0"

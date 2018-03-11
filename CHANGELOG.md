@@ -1,3 +1,7 @@
+### 2018-03-11 / 0.15.9
+
+* Updated dependencies.
+
 ### 2018-03-11 / 0.15.8
 
 * Updated dependencies.
