@@ -12,8 +12,6 @@ import {GlobalState} from '../data/state';
 import {Environment} from '../models/environment';
 import {reducer} from './reducers';
 
-const onServer = typeof window === 'undefined'; // tslint:disable-line strict-type-predicates
-
 interface ExtendedWindow extends Window{
   __REDUX_DEVTOOLS_EXTENSION_COMPOSE__?: any;
   process: {env: any};
@@ -25,14 +23,11 @@ type Diff<T extends string, U extends string> = ({ [P in T]: P } & { [P in U]: n
 type Omit<T, K extends keyof T> = Pick<T, Diff<keyof T, K>>;
 
 declare const env: Environment;
-let composeEnhancers = compose;
 
-if(!onServer){
-  const extendedWindow: ExtendedWindow = window as ExtendedWindow;
-  composeEnhancers = extendedWindow.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
-  extendedWindow.showEnvironment = () => console.log(env);
-  extendedWindow.process = {env: process.env};
-}
+const extendedWindow: ExtendedWindow = window as ExtendedWindow;
+const composeEnhancers = extendedWindow.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
+extendedWindow.showEnvironment = () => console.log(env);
+extendedWindow.process = {env: process.env};
 
 export type Dispatch = (action: Action | AsyncAction | RouterAction) => Action;
 
@@ -58,12 +53,11 @@ export function createRouteMapStateToProps<T, R>(mapper: RouteMapper<T, R>): Rou
 }
 
 // The main store
-export const history = !onServer ? createHistory() : null;
+export const history = createHistory();
 export const store = createStore(
   combineReducers({application: reducer, router: routerReducer}),
   composeEnhancers(applyMiddleware(routerMiddleware(history), thunk))
 );
 
 // Initialize Firebase
-if(!onServer)
-  firebase.initializeApp(env.firebase);
+firebase.initializeApp(env.firebase);
