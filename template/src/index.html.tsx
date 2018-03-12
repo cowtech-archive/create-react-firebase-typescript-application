@@ -1,11 +1,7 @@
 // tslint:disable jsx-self-close jsx-boolean-value
-
-require('@cowtech/react-lazily/images/favicon.png');
-require('@cowtech/react-lazily/images/cowtech.png');
-require('./manifest.json');
-require('./robots.txt');
-
 import * as React from 'react';
+
+import './js/styling/reset';
 
 import {Spinner, IconsDefinitions, debugClassName} from '@cowtech/react-lazily';
 import ReactDOMServer from 'react-dom/server';
@@ -16,6 +12,11 @@ import {Environment} from './js/models/environment';
 import {mainClassName, spinnerColor} from './js/styling/environment';
 
 declare const env: Environment;
+
+require('@cowtech/react-lazily/images/favicon.png');
+require('@cowtech/react-lazily/images/cowtech.png');
+require('./manifest.json');
+require('./robots.txt');
 
 const structuredData = {
 
