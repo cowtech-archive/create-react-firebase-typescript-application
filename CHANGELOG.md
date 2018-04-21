@@ -1,3 +1,7 @@
+### 2018-04-21 / 0.16.0
+
+* Fixed SW caching.
+
 ### 2018-03-12 / 0.15.13
 
 * Updated template.
