@@ -1,5 +1,7 @@
 # @cowtech/create-react-firebase-typescript-application
 
+## END OF DEVELOPMENT NOTICE - This package has been discontinued
+
 Boilerplate for a React (and Firebase backed) TypeScript application.
 
 ## Copyright
